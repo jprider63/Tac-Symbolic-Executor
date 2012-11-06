@@ -1,0 +1,17 @@
+	a := symarray 4;
+	k := 0;
+back1:	if k < 4 goto sq;
+	k := 0;
+	s := 0;
+back2:	if k < 4 goto sum;
+	s := s + 1;
+	assert s != 0;
+sq:	t := a[k];
+	t := t * t;
+	a[k] := t;
+	k := k + 1;
+	goto back1;
+sum:	t := a[k];
+	s := s + t;
+	k := k + 1;
+	goto back2;

@@ -1,0 +1,11 @@
+x := symarray 10;
+y := symint;
+if y < 3 goto l;
+if y >= 8 goto l;
+z1 := y + 2;
+z2 := y - 2;
+a1 := x[z1];
+a2 := x[z2];
+a2 := a2 - 10;
+assert a1 != a2;
+l: y := 0;

@@ -1,0 +1,4 @@
+export PREFIX=.
+export CC=gcc -m32
+export CXX=g++ -m32
+export CFLAGS_FPIC=-fpic

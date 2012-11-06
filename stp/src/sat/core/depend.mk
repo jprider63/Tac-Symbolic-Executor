@@ -1,0 +1,51 @@
+/Users/james/Documents/school/12/Fall/CMSC631/p2/stp/src/sat/core/Main.o /Users/james/Documents/school/12/Fall/CMSC631/p2/stp/src/sat/core/Main.or /Users/james/Documents/school/12/Fall/CMSC631/p2/stp/src/sat/core/Main.od /Users/james/Documents/school/12/Fall/CMSC631/p2/stp/src/sat/core/Main.op:  \
+ /Users/james/Documents/school/12/Fall/CMSC631/p2/stp/src/sat/core/Main.cc \
+  /Users/james/Documents/school/12/Fall/CMSC631/p2/stp/src/sat/core/../utils/System.h \
+  /Users/james/Documents/school/12/Fall/CMSC631/p2/stp/src/sat/core/../utils/../mtl/IntTypesMtl.h \
+  /Users/james/Documents/school/12/Fall/CMSC631/p2/stp/src/sat/core/../utils/ParseUtils.h \
+  /Users/james/Documents/school/12/Fall/CMSC631/p2/stp/src/sat/core/../utils/Options.h \
+  /Users/james/Documents/school/12/Fall/CMSC631/p2/stp/src/sat/core/../utils/../mtl/Vec.h \
+  /Users/james/Documents/school/12/Fall/CMSC631/p2/stp/src/sat/core/../utils/../mtl/../mtl/IntTypesMtl.h \
+  /Users/james/Documents/school/12/Fall/CMSC631/p2/stp/src/sat/core/../utils/../mtl/../mtl/XAlloc.h \
+  /Users/james/Documents/school/12/Fall/CMSC631/p2/stp/src/sat/core/../utils/../utils/ParseUtils.h \
+  /Users/james/Documents/school/12/Fall/CMSC631/p2/stp/src/sat/core/../core/Dimacs.h \
+  /Users/james/Documents/school/12/Fall/CMSC631/p2/stp/src/sat/core/../core/../utils/ParseUtils.h \
+  /Users/james/Documents/school/12/Fall/CMSC631/p2/stp/src/sat/core/../core/../core/SolverTypes.h \
+  /Users/james/Documents/school/12/Fall/CMSC631/p2/stp/src/sat/core/../core/../core/../mtl/IntTypesMtl.h \
+  /Users/james/Documents/school/12/Fall/CMSC631/p2/stp/src/sat/core/../core/../core/../mtl/Alg.h \
+  /Users/james/Documents/school/12/Fall/CMSC631/p2/stp/src/sat/core/../core/../core/../mtl/../mtl/Vec.h \
+  /Users/james/Documents/school/12/Fall/CMSC631/p2/stp/src/sat/core/../core/../core/../mtl/Vec.h \
+  /Users/james/Documents/school/12/Fall/CMSC631/p2/stp/src/sat/core/../core/../core/../mtl/Map.h \
+  /Users/james/Documents/school/12/Fall/CMSC631/p2/stp/src/sat/core/../core/../core/../mtl/../mtl/IntTypesMtl.h \
+  /Users/james/Documents/school/12/Fall/CMSC631/p2/stp/src/sat/core/../core/../core/../mtl/Alloc.h \
+  /Users/james/Documents/school/12/Fall/CMSC631/p2/stp/src/sat/core/../core/../core/../mtl/../mtl/XAlloc.h \
+  /Users/james/Documents/school/12/Fall/CMSC631/p2/stp/src/sat/core/../core/Solver.h \
+  /Users/james/Documents/school/12/Fall/CMSC631/p2/stp/src/sat/core/../core/../mtl/Vec.h \
+  /Users/james/Documents/school/12/Fall/CMSC631/p2/stp/src/sat/core/../core/../mtl/Heap.h \
+  /Users/james/Documents/school/12/Fall/CMSC631/p2/stp/src/sat/core/../core/../mtl/../mtl/Vec.h \
+  /Users/james/Documents/school/12/Fall/CMSC631/p2/stp/src/sat/core/../core/../mtl/Alg.h \
+  /Users/james/Documents/school/12/Fall/CMSC631/p2/stp/src/sat/core/../core/../utils/Options.h
+/Users/james/Documents/school/12/Fall/CMSC631/p2/stp/src/sat/core/Solver.o /Users/james/Documents/school/12/Fall/CMSC631/p2/stp/src/sat/core/Solver.or /Users/james/Documents/school/12/Fall/CMSC631/p2/stp/src/sat/core/Solver.od /Users/james/Documents/school/12/Fall/CMSC631/p2/stp/src/sat/core/Solver.op:  \
+ /Users/james/Documents/school/12/Fall/CMSC631/p2/stp/src/sat/core/Solver.cc \
+  /Users/james/Documents/school/12/Fall/CMSC631/p2/stp/src/sat/core/../mtl/Sort.h \
+  /Users/james/Documents/school/12/Fall/CMSC631/p2/stp/src/sat/core/../mtl/../mtl/Vec.h \
+  /Users/james/Documents/school/12/Fall/CMSC631/p2/stp/src/sat/core/../mtl/../mtl/../mtl/IntTypesMtl.h \
+  /Users/james/Documents/school/12/Fall/CMSC631/p2/stp/src/sat/core/../mtl/../mtl/../mtl/XAlloc.h \
+  /Users/james/Documents/school/12/Fall/CMSC631/p2/stp/src/sat/core/../core/Solver.h \
+  /Users/james/Documents/school/12/Fall/CMSC631/p2/stp/src/sat/core/../core/../mtl/Vec.h \
+  /Users/james/Documents/school/12/Fall/CMSC631/p2/stp/src/sat/core/../core/../mtl/Heap.h \
+  /Users/james/Documents/school/12/Fall/CMSC631/p2/stp/src/sat/core/../core/../mtl/../mtl/Vec.h \
+  /Users/james/Documents/school/12/Fall/CMSC631/p2/stp/src/sat/core/../core/../mtl/Alg.h \
+  /Users/james/Documents/school/12/Fall/CMSC631/p2/stp/src/sat/core/../core/../utils/Options.h \
+  /Users/james/Documents/school/12/Fall/CMSC631/p2/stp/src/sat/core/../core/../utils/../mtl/IntTypesMtl.h \
+  /Users/james/Documents/school/12/Fall/CMSC631/p2/stp/src/sat/core/../core/../utils/../mtl/Vec.h \
+  /Users/james/Documents/school/12/Fall/CMSC631/p2/stp/src/sat/core/../core/../utils/../utils/ParseUtils.h \
+  /Users/james/Documents/school/12/Fall/CMSC631/p2/stp/src/sat/core/../core/../core/SolverTypes.h \
+  /Users/james/Documents/school/12/Fall/CMSC631/p2/stp/src/sat/core/../core/../core/../mtl/IntTypesMtl.h \
+  /Users/james/Documents/school/12/Fall/CMSC631/p2/stp/src/sat/core/../core/../core/../mtl/Alg.h \
+  /Users/james/Documents/school/12/Fall/CMSC631/p2/stp/src/sat/core/../core/../core/../mtl/Vec.h \
+  /Users/james/Documents/school/12/Fall/CMSC631/p2/stp/src/sat/core/../core/../core/../mtl/Map.h \
+  /Users/james/Documents/school/12/Fall/CMSC631/p2/stp/src/sat/core/../core/../core/../mtl/../mtl/IntTypesMtl.h \
+  /Users/james/Documents/school/12/Fall/CMSC631/p2/stp/src/sat/core/../core/../core/../mtl/../mtl/Vec.h \
+  /Users/james/Documents/school/12/Fall/CMSC631/p2/stp/src/sat/core/../core/../core/../mtl/Alloc.h \
+  /Users/james/Documents/school/12/Fall/CMSC631/p2/stp/src/sat/core/../core/../core/../mtl/../mtl/XAlloc.h

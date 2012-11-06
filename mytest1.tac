@@ -1,0 +1,13 @@
+b := 10;
+c := 20;
+t1 := c;
+t2 := b * t1;
+t3 := c;
+t4 := b * t3;
+t5 := t2 + t4;
+a := t5;
+x := symint;
+goto l;
+z := 6 / 2;
+assert 2 < 3;
+l:	assert 5 < 3;

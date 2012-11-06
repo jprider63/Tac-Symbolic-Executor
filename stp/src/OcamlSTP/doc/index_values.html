@@ -1,0 +1,353 @@
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="OcamlSTP" rel="Chapter" href="OcamlSTP.html"><title>Index of values</title>
+</head>
+<body>
+<center><h1>Index of values</h1></center>
+<table>
+<tr><td align="left"><br>A</td></tr>
+<tr><td><a href="OcamlSTP.html#VALarray_index_width">array_index_width</a> [<a href="OcamlSTP.html">OcamlSTP</a>]</td>
+<td><div class="info">
+<code class="code">array_index_width stp array</code> returns the bit-width of the index of <code class="code">array</code> in the STP context <code class="code">stp</code>.
+</div>
+</td></tr>
+<tr><td><a href="OcamlSTP.html#VALarray_read">array_read</a> [<a href="OcamlSTP.html">OcamlSTP</a>]</td>
+<td><div class="info">
+<code class="code">array_read stp array index</code> returns the bitvector of the <code class="code">index</code>th element of <code class="code">array</code> in the STP context <code class="code">stp</code>.
+</div>
+</td></tr>
+<tr><td><a href="OcamlSTP.html#VALarray_value_width">array_value_width</a> [<a href="OcamlSTP.html">OcamlSTP</a>]</td>
+<td><div class="info">
+<code class="code">array_value_width stp array</code> returns the bit-width of the values of <code class="code">array</code> in the STP context <code class="code">stp</code>.
+</div>
+</td></tr>
+<tr><td><a href="OcamlSTP.html#VALarray_var">array_var</a> [<a href="OcamlSTP.html">OcamlSTP</a>]</td>
+<td><div class="info">
+<code class="code">array_var stp name index_width val_width</code> looks up or creates an array variable named <code class="code">name</code> with indices of bit-width <code class="code">index_width</code> and values of bit-width <code class="code">val_width</code> in the STP context <code class="code">stp</code>.
+</div>
+</td></tr>
+<tr><td><a href="OcamlSTP.html#VALarray_write">array_write</a> [<a href="OcamlSTP.html">OcamlSTP</a>]</td>
+<td><div class="info">
+<code class="code">array_write stp array index value</code> returns the array of <code class="code">array</code> with the <code class="code">index</code>th element replaced with the bitvector <code class="code">value</code> in the STP context <code class="code">stp</code>.
+</div>
+</td></tr>
+<tr><td align="left"><br>B</td></tr>
+<tr><td><a href="OcamlSTP.html#VALbool_and">bool_and</a> [<a href="OcamlSTP.html">OcamlSTP</a>]</td>
+<td><div class="info">
+<code class="code">bool_and stp left right</code> returns the boolean <code class="code">left &amp;&amp; right</code> in the STP context <code class="code">stp</code>.
+</div>
+</td></tr>
+<tr><td><a href="OcamlSTP.html#VALbool_false">bool_false</a> [<a href="OcamlSTP.html">OcamlSTP</a>]</td>
+<td><div class="info">
+<code class="code">bool_false stp</code> returns a false boolean constant in the STP context <code class="code">stp</code>.
+</div>
+</td></tr>
+<tr><td><a href="OcamlSTP.html#VALbool_iff">bool_iff</a> [<a href="OcamlSTP.html">OcamlSTP</a>]</td>
+<td><div class="info">
+<code class="code">bool_iff stp left right</code> returns the boolean <code class="code">left iff right</code> (or equivalently, <code class="code">left xnor right</code>) in the STP context <code class="code">stp</code>.
+</div>
+</td></tr>
+<tr><td><a href="OcamlSTP.html#VALbool_implies">bool_implies</a> [<a href="OcamlSTP.html">OcamlSTP</a>]</td>
+<td><div class="info">
+<code class="code">bool_implies stp left right</code> returns the boolean <code class="code">left implies right</code> (or equivalently, <code class="code">not left or right</code>) in the STP context <code class="code">stp</code>.
+</div>
+</td></tr>
+<tr><td><a href="OcamlSTP.html#VALbool_nand">bool_nand</a> [<a href="OcamlSTP.html">OcamlSTP</a>]</td>
+<td><div class="info">
+<code class="code">bool_nand stp left right</code> returns the boolean <code class="code">not (left &amp;&amp; right)</code> in the STP context <code class="code">stp</code>.
+</div>
+</td></tr>
+<tr><td><a href="OcamlSTP.html#VALbool_nor">bool_nor</a> [<a href="OcamlSTP.html">OcamlSTP</a>]</td>
+<td><div class="info">
+<code class="code">bool_nor stp left right</code> returns the boolean <code class="code">not (left || right)</code> in the STP context <code class="code">stp</code>.
+</div>
+</td></tr>
+<tr><td><a href="OcamlSTP.html#VALbool_not">bool_not</a> [<a href="OcamlSTP.html">OcamlSTP</a>]</td>
+<td><div class="info">
+<code class="code">bool_not stp expr</code> returns the boolean <code class="code">not expr</code> in the STP context <code class="code">stp</code>.
+</div>
+</td></tr>
+<tr><td><a href="OcamlSTP.html#VALbool_or">bool_or</a> [<a href="OcamlSTP.html">OcamlSTP</a>]</td>
+<td><div class="info">
+<code class="code">bool_or stp left right</code> returns the boolean <code class="code">left || right</code> in the STP context <code class="code">stp</code>.
+</div>
+</td></tr>
+<tr><td><a href="OcamlSTP.html#VALbool_true">bool_true</a> [<a href="OcamlSTP.html">OcamlSTP</a>]</td>
+<td><div class="info">
+<code class="code">bool_true stp</code> returns a true boolean constant in the STP context <code class="code">stp</code>.
+</div>
+</td></tr>
+<tr><td><a href="OcamlSTP.html#VALbool_var">bool_var</a> [<a href="OcamlSTP.html">OcamlSTP</a>]</td>
+<td><div class="info">
+<code class="code">bool_var stp name</code> looks up or creates a boolean variable named <code class="code">name</code> in the STP context <code class="code">stp</code>.
+</div>
+</td></tr>
+<tr><td><a href="OcamlSTP.html#VALbool_xor">bool_xor</a> [<a href="OcamlSTP.html">OcamlSTP</a>]</td>
+<td><div class="info">
+<code class="code">bool_xor stp left right</code> returns the boolean <code class="code">left xor right</code> in the STP context <code class="code">stp</code>.
+</div>
+</td></tr>
+<tr><td><a href="OcamlSTP.html#VALbv_add">bv_add</a> [<a href="OcamlSTP.html">OcamlSTP</a>]</td>
+<td><div class="info">
+<code class="code">bv_add stp left right</code> returns the bitvector <code class="code">left + right</code> in the STP context <code class="code">stp</code>.
+</div>
+</td></tr>
+<tr><td><a href="OcamlSTP.html#VALbv_and">bv_and</a> [<a href="OcamlSTP.html">OcamlSTP</a>]</td>
+<td><div class="info">
+<code class="code">bv_and stp left right</code> returns the bitvector of bitwise <code class="code">left &amp;&amp; right</code> (i.e.
+</div>
+</td></tr>
+<tr><td><a href="OcamlSTP.html#VALbv_concat">bv_concat</a> [<a href="OcamlSTP.html">OcamlSTP</a>]</td>
+<td><div class="info">
+<code class="code">bv_concat stp left right</code> returns the bitvector concatenation of <code class="code">left</code> and <code class="code">right</code> in the STP context <code class="code">stp</code>.
+</div>
+</td></tr>
+<tr><td><a href="OcamlSTP.html#VALbv_div">bv_div</a> [<a href="OcamlSTP.html">OcamlSTP</a>]</td>
+<td><div class="info">
+<code class="code">bv_div stp left right</code> returns the bitvector <code class="code">left / right</code> in the STP context <code class="code">stp</code>.
+</div>
+</td></tr>
+<tr><td><a href="OcamlSTP.html#VALbv_eq">bv_eq</a> [<a href="OcamlSTP.html">OcamlSTP</a>]</td>
+<td><div class="info">
+<code class="code">bv_eq stp left right</code> returns the boolean of <code class="code">left = right</code> in the STP context <code class="code">stp</code>.
+</div>
+</td></tr>
+<tr><td><a href="OcamlSTP.html#VALbv_extract">bv_extract</a> [<a href="OcamlSTP.html">OcamlSTP</a>]</td>
+<td><div class="info">
+<code class="code">bv_extract stp expr high_bit low_bit</code> returns the bitvector slice from <code class="code">high_bit</code> to <code class="code">low_bit</code> inclusive in the STP context <code class="code">stp</code>.
+</div>
+</td></tr>
+<tr><td><a href="OcamlSTP.html#VALbv_ge">bv_ge</a> [<a href="OcamlSTP.html">OcamlSTP</a>]</td>
+<td><div class="info">
+<code class="code">bv_ge stp left right</code> returns the boolean of <code class="code">left &gt;= right</code> in the STP context <code class="code">stp</code>.
+</div>
+</td></tr>
+<tr><td><a href="OcamlSTP.html#VALbv_get_bit">bv_get_bit</a> [<a href="OcamlSTP.html">OcamlSTP</a>]</td>
+<td><div class="info">
+<code class="code">bv_get_bit stp expr index</code> returns the boolean of the <code class="code">index</code>th bit of <code class="code">expr</code> in the STP context <code class="code">stp</code>.
+</div>
+</td></tr>
+<tr><td><a href="OcamlSTP.html#VALbv_gt">bv_gt</a> [<a href="OcamlSTP.html">OcamlSTP</a>]</td>
+<td><div class="info">
+<code class="code">bv_gt stp left right</code> returns the boolean of <code class="code">left &gt; right</code> in the STP context <code class="code">stp</code>.
+</div>
+</td></tr>
+<tr><td><a href="OcamlSTP.html#VALbv_le">bv_le</a> [<a href="OcamlSTP.html">OcamlSTP</a>]</td>
+<td><div class="info">
+<code class="code">bv_le stp left right</code> returns the boolean of <code class="code">left &lt;= right</code> in the STP context <code class="code">stp</code>.
+</div>
+</td></tr>
+<tr><td><a href="OcamlSTP.html#VALbv_lt">bv_lt</a> [<a href="OcamlSTP.html">OcamlSTP</a>]</td>
+<td><div class="info">
+<code class="code">bv_lt stp left right</code> returns the boolean of <code class="code">left &lt; right</code> in the STP context <code class="code">stp</code>.
+</div>
+</td></tr>
+<tr><td><a href="OcamlSTP.html#VALbv_mul">bv_mul</a> [<a href="OcamlSTP.html">OcamlSTP</a>]</td>
+<td><div class="info">
+<code class="code">bv_mul stp left right</code> returns the bitvector <code class="code">left * right</code> in the STP context <code class="code">stp</code>.
+</div>
+</td></tr>
+<tr><td><a href="OcamlSTP.html#VALbv_neg">bv_neg</a> [<a href="OcamlSTP.html">OcamlSTP</a>]</td>
+<td><div class="info">
+<code class="code">bv_neg stp expr</code> returns the bitvector <code class="code">-expr</code> in the STP context <code class="code">stp</code>.
+</div>
+</td></tr>
+<tr><td><a href="OcamlSTP.html#VALbv_not">bv_not</a> [<a href="OcamlSTP.html">OcamlSTP</a>]</td>
+<td><div class="info">
+<code class="code">bv_not stp expr</code> returns the bitvector of bitwise <code class="code">not expr</code> (i.e., <code class="code">lnot expr</code>) in the STP context <code class="code">stp</code>.
+</div>
+</td></tr>
+<tr><td><a href="OcamlSTP.html#VALbv_of_int">bv_of_int</a> [<a href="OcamlSTP.html">OcamlSTP</a>]</td>
+<td><div class="info">
+<code class="code">bv_of_int stp width val</code> returns a constant bitvector of bit-width <code class="code">width</code> and value <code class="code">val</code> of type <code class="code">int</code> in the STP context <code class="code">stp</code>.
+</div>
+</td></tr>
+<tr><td><a href="OcamlSTP.html#VALbv_of_int32">bv_of_int32</a> [<a href="OcamlSTP.html">OcamlSTP</a>]</td>
+<td><div class="info">
+<code class="code">bv_of_int32 stp width val</code> returns a constant bitvector of bit-width <code class="code">width</code> and value <code class="code">val</code> of type <code class="code">int32</code> in the STP context <code class="code">stp</code>.
+</div>
+</td></tr>
+<tr><td><a href="OcamlSTP.html#VALbv_of_int64">bv_of_int64</a> [<a href="OcamlSTP.html">OcamlSTP</a>]</td>
+<td><div class="info">
+<code class="code">bv_of_int64 stp width val</code> returns a constant bitvector of bit-width <code class="code">width</code> and value <code class="code">val</code> of type <code class="code">int64</code> in the STP context <code class="code">stp</code>.
+</div>
+</td></tr>
+<tr><td><a href="OcamlSTP.html#VALbv_of_string">bv_of_string</a> [<a href="OcamlSTP.html">OcamlSTP</a>]</td>
+<td><div class="info">
+<code class="code">bv_of_string stp width val_string base</code> returns a constant bitvector of bit-width <code class="code">width</code> and value <code class="code">val_string</code> represented as a string of base <code class="code">base</code> in the STP context <code class="code">stp</code>.
+</div>
+</td></tr>
+<tr><td><a href="OcamlSTP.html#VALbv_or">bv_or</a> [<a href="OcamlSTP.html">OcamlSTP</a>]</td>
+<td><div class="info">
+<code class="code">bv_or stp left right</code> returns the bitvector of bitwise <code class="code">left || right</code> (i.e.
+</div>
+</td></tr>
+<tr><td><a href="OcamlSTP.html#VALbv_rem">bv_rem</a> [<a href="OcamlSTP.html">OcamlSTP</a>]</td>
+<td><div class="info">
+<code class="code">bv_rem stp left right</code> returns the bitvector of the remainder of <code class="code">left / right</code> (i.e.
+</div>
+</td></tr>
+<tr><td><a href="OcamlSTP.html#VALbv_shift_left">bv_shift_left</a> [<a href="OcamlSTP.html">OcamlSTP</a>]</td>
+<td><div class="info">
+<code class="code">bv_shift_left stp expr shift</code> returns the bitvector <code class="code">expr</code> shifted left by <code class="code">shift</code> (i.e.
+</div>
+</td></tr>
+<tr><td><a href="OcamlSTP.html#VALbv_shift_right">bv_shift_right</a> [<a href="OcamlSTP.html">OcamlSTP</a>]</td>
+<td><div class="info">
+<code class="code">bv_shift_right stp expr shift</code> returns the bitvector <code class="code">expr</code> shifted right by <code class="code">shift</code> (i.e.
+</div>
+</td></tr>
+<tr><td><a href="OcamlSTP.html#VALbv_sign_extend">bv_sign_extend</a> [<a href="OcamlSTP.html">OcamlSTP</a>]</td>
+<td><div class="info">
+<code class="code">bv_sign_extend stp expr width</code> returns the bitvector <code class="code">expr</code> extended to <code class="code">width</code> bits by replicating the sign bit in the STP context <code class="code">stp</code>.
+</div>
+</td></tr>
+<tr><td><a href="OcamlSTP.html#VALbv_signed_div">bv_signed_div</a> [<a href="OcamlSTP.html">OcamlSTP</a>]</td>
+<td><div class="info">
+<code class="code">bv_signed_div stp left right</code> returns the bitvector of the signed division <code class="code">left / right</code> in the STP context <code class="code">stp</code>.
+</div>
+</td></tr>
+<tr><td><a href="OcamlSTP.html#VALbv_signed_ge">bv_signed_ge</a> [<a href="OcamlSTP.html">OcamlSTP</a>]</td>
+<td><div class="info">
+<code class="code">bv_signed_ge stp left right</code> returns the boolean of signed <code class="code">left &gt;= right</code> in the STP context <code class="code">stp</code>.
+</div>
+</td></tr>
+<tr><td><a href="OcamlSTP.html#VALbv_signed_gt">bv_signed_gt</a> [<a href="OcamlSTP.html">OcamlSTP</a>]</td>
+<td><div class="info">
+<code class="code">bv_signed_gt stp left right</code> returns the boolean of signed <code class="code">left &gt; right</code> in the STP context <code class="code">stp</code>.
+</div>
+</td></tr>
+<tr><td><a href="OcamlSTP.html#VALbv_signed_le">bv_signed_le</a> [<a href="OcamlSTP.html">OcamlSTP</a>]</td>
+<td><div class="info">
+<code class="code">bv_signed_le stp left right</code> returns the boolean of signed <code class="code">left &lt;= right</code> in the STP context <code class="code">stp</code>.
+</div>
+</td></tr>
+<tr><td><a href="OcamlSTP.html#VALbv_signed_lt">bv_signed_lt</a> [<a href="OcamlSTP.html">OcamlSTP</a>]</td>
+<td><div class="info">
+<code class="code">bv_signed_lt stp left right</code> returns the boolean of signed <code class="code">left &lt; right</code> in the STP context <code class="code">stp</code>.
+</div>
+</td></tr>
+<tr><td><a href="OcamlSTP.html#VALbv_signed_mod">bv_signed_mod</a> [<a href="OcamlSTP.html">OcamlSTP</a>]</td>
+<td><div class="info">
+<code class="code">bv_signed_mod stp left right</code> returns the bitvector of the signed remainder of <code class="code">left / right</code> rounded towards -infinity (e.g., -10 mod 3 = 2) in the STP context <code class="code">stp</code>.
+</div>
+</td></tr>
+<tr><td><a href="OcamlSTP.html#VALbv_signed_rem">bv_signed_rem</a> [<a href="OcamlSTP.html">OcamlSTP</a>]</td>
+<td><div class="info">
+<code class="code">bv_signed_rem stp left right</code> returns the bitvector of the signed remainder of <code class="code">left / right</code> rounded towards zero (e.g., -10 rem 3 = -1; i.e.
+</div>
+</td></tr>
+<tr><td><a href="OcamlSTP.html#VALbv_signed_shift_right">bv_signed_shift_right</a> [<a href="OcamlSTP.html">OcamlSTP</a>]</td>
+<td><div class="info">
+<code class="code">bv_signed_shift_right stp expr shift</code> returns the bitvector <code class="code">expr</code> shifted right by <code class="code">shift</code> by replicating the sign bit (i.e.
+</div>
+</td></tr>
+<tr><td><a href="OcamlSTP.html#VALbv_sub">bv_sub</a> [<a href="OcamlSTP.html">OcamlSTP</a>]</td>
+<td><div class="info">
+<code class="code">bv_sub stp left right</code> returns the bitvector <code class="code">left - right</code> in the STP context <code class="code">stp</code>.
+</div>
+</td></tr>
+<tr><td><a href="OcamlSTP.html#VALbv_var">bv_var</a> [<a href="OcamlSTP.html">OcamlSTP</a>]</td>
+<td><div class="info">
+<code class="code">bv_var stp name width</code> looks up or creates a bitvector variable named <code class="code">name</code> of bit-width <code class="code">width</code> in the STP context <code class="code">stp</code>.
+</div>
+</td></tr>
+<tr><td><a href="OcamlSTP.html#VALbv_width">bv_width</a> [<a href="OcamlSTP.html">OcamlSTP</a>]</td>
+<td><div class="info">
+<code class="code">bv_width stp expr</code> returns the bit-width of the bitvector <code class="code">expr</code> in the STP context <code class="code">stp</code>.
+</div>
+</td></tr>
+<tr><td><a href="OcamlSTP.html#VALbv_xor">bv_xor</a> [<a href="OcamlSTP.html">OcamlSTP</a>]</td>
+<td><div class="info">
+<code class="code">bv_xor stp left right</code> returns the bitvector of bitwise <code class="code">left xor right</code> (i.e., <code class="code">left lxor right</code>) in the STP context <code class="code">stp</code>.
+</div>
+</td></tr>
+<tr><td><a href="OcamlSTP.html#VALbv_zero_extend">bv_zero_extend</a> [<a href="OcamlSTP.html">OcamlSTP</a>]</td>
+<td><div class="info">
+<code class="code">bv_zero_extend stp expr width</code> returns the bitvector <code class="code">expr</code> extended to <code class="code">width</code> bits in the STP context <code class="code">stp</code>.
+</div>
+</td></tr>
+<tr><td align="left"><br>I</td></tr>
+<tr><td><a href="OcamlSTP.html#VALite">ite</a> [<a href="OcamlSTP.html">OcamlSTP</a>]</td>
+<td><div class="info">
+<code class="code">ite stp guard then else</code> returns a conditional expression that has the value <code class="code">then</code> if <code class="code">guard</code> is true, or <code class="code">else</code> otherwise, in the STP context <code class="code">stp</code>.
+</div>
+</td></tr>
+<tr><td align="left"><br>M</td></tr>
+<tr><td><a href="OcamlSTP.html#VALmake_context">make_context</a> [<a href="OcamlSTP.html">OcamlSTP</a>]</td>
+<td><div class="info">
+<code class="code">make_context ()</code> creates a new STP context.
+</div>
+</td></tr>
+<tr><td align="left"><br>S</td></tr>
+<tr><td><a href="OcamlSTP.html#VALset_seed">set_seed</a> [<a href="OcamlSTP.html">OcamlSTP</a>]</td>
+<td><div class="info">
+<code class="code">set_seed stp seed</code> sets an optional seed for the internal random number generator used in the STP context <code class="code">stp</code>.
+</div>
+</td></tr>
+<tr><td align="left"><br>T</td></tr>
+<tr><td><a href="OcamlSTP.html#VALto_bool">to_bool</a> [<a href="OcamlSTP.html">OcamlSTP</a>]</td>
+<td><div class="info">
+<code class="code">to_bool expr</code> returns the <code class="code">bool</code> value of the constant <code class="code">expr</code>.
+</div>
+</td></tr>
+<tr><td><a href="OcamlSTP.html#VALto_int">to_int</a> [<a href="OcamlSTP.html">OcamlSTP</a>]</td>
+<td><div class="info">
+<code class="code">to_int expr</code> returns the <code class="code">int</code> value of the constant <code class="code">expr</code>.
+</div>
+</td></tr>
+<tr><td><a href="OcamlSTP.html#VALto_int32">to_int32</a> [<a href="OcamlSTP.html">OcamlSTP</a>]</td>
+<td><div class="info">
+<code class="code">to_int32 expr</code> returns the <code class="code">int32</code> value of the constant <code class="code">expr</code>.
+</div>
+</td></tr>
+<tr><td><a href="OcamlSTP.html#VALto_int64">to_int64</a> [<a href="OcamlSTP.html">OcamlSTP</a>]</td>
+<td><div class="info">
+<code class="code">to_int64 expr</code> returns the <code class="code">int64</code> value of the constant <code class="code">expr</code>.
+</div>
+</td></tr>
+<tr><td><a href="OcamlSTP.html#VALto_string">to_string</a> [<a href="OcamlSTP.html">OcamlSTP</a>]</td>
+<td><div class="info">
+<code class="code">to_string expr</code> returns the string representation of <code class="code">expr</code>.
+</div>
+</td></tr>
+<tr><td align="left"><br>V</td></tr>
+<tr><td><a href="OcamlSTP.html#VALvc_assert">vc_assert</a> [<a href="OcamlSTP.html">OcamlSTP</a>]</td>
+<td><div class="info">
+<code class="code">vc_assert stp expr</code> asserts the boolean <code class="code">expr</code> in the STP context <code class="code">stp</code>.
+</div>
+</td></tr>
+<tr><td><a href="OcamlSTP.html#VALvc_get_asserts">vc_get_asserts</a> [<a href="OcamlSTP.html">OcamlSTP</a>]</td>
+<td><div class="info">
+<code class="code">vc_get_asserts stp</code> get the current list of assertions in the STP context <code class="code">stp</code>.
+</div>
+</td></tr>
+<tr><td><a href="OcamlSTP.html#VALvc_get_counterexample">vc_get_counterexample</a> [<a href="OcamlSTP.html">OcamlSTP</a>]</td>
+<td><div class="info">
+<code class="code">vc_get_counterexample stp expr</code> returns <code class="code">Some x</code> where <code class="code">x</code> is the counterexample value for the boolean or bitvector expression <code class="code">expr</code> if the previous query is <code class="code">Invalid</code>, or <code class="code">None</code> if the previous query is <code class="code">Valid</code>.
+</div>
+</td></tr>
+<tr><td><a href="OcamlSTP.html#VALvc_pop">vc_pop</a> [<a href="OcamlSTP.html">OcamlSTP</a>]</td>
+<td><div class="info">
+<code class="code">vc_pop stp</code> restores the most recently saved state of the STP context <code class="code">stp</code> (i.e., the list of assertions).
+</div>
+</td></tr>
+<tr><td><a href="OcamlSTP.html#VALvc_push">vc_push</a> [<a href="OcamlSTP.html">OcamlSTP</a>]</td>
+<td><div class="info">
+<code class="code">vc_push stp</code> saves the current state of the STP context <code class="code">stp</code> (i.e., the list of assertions).
+</div>
+</td></tr>
+<tr><td><a href="OcamlSTP.html#VALvc_query">vc_query</a> [<a href="OcamlSTP.html">OcamlSTP</a>]</td>
+<td><div class="info">
+<code class="code">vc_query stp expr</code> returns <code class="code">Valid</code> if the boolean <code class="code">expr</code> is true in the STP context <code class="code">stp</code> (i.e., <code class="code">assertions implies expr</code> is true), or <code class="code">Invalid</code> if it cannot be determined (i.e., <code class="code">assertions implies expr</code> may be true or false).
+</div>
+</td></tr>
+</table><br>
+</body>
+</html>

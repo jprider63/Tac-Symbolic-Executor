@@ -1,0 +1,330 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link rel="Up" href="index.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="OcamlSTP" rel="Chapter" href="OcamlSTP.html"><link title="Types" rel="Section" href="#2_Types">
+<link title="STP context" rel="Section" href="#2_STPcontext">
+<link title="Variables" rel="Section" href="#2_Variables">
+<link title="Boolean constants" rel="Section" href="#2_Booleanconstants">
+<link title="Bitvector constants" rel="Section" href="#2_Bitvectorconstants">
+<link title="Boolean expressions" rel="Section" href="#2_Booleanexpressions">
+<link title="Bitvector arithmetic expressions" rel="Section" href="#2_Bitvectorarithmeticexpressions">
+<link title="Bitvector bitwise expressions" rel="Section" href="#2_Bitvectorbitwiseexpressions">
+<link title="Bitvector slicing/extension" rel="Section" href="#2_Bitvectorslicingextension">
+<link title="Bitvector comparison" rel="Section" href="#2_Bitvectorcomparison">
+<link title="Array operations" rel="Section" href="#2_Arrayoperations">
+<link title="Conditional expressions" rel="Section" href="#2_Conditionalexpressions">
+<link title="Validity checking" rel="Section" href="#2_Validitychecking">
+<link title="Metadata query" rel="Section" href="#2_Metadataquery">
+<link title="Value conversion" rel="Section" href="#2_Valueconversion">
+<title>OcamlSTP</title>
+</head>
+<body>
+<div class="navbar">&nbsp;<a href="index.html">Up</a>
+&nbsp;</div>
+<center><h1>Module <a href="type_OcamlSTP.html">OcamlSTP</a></h1></center>
+<br>
+<pre><span class="keyword">module</span> OcamlSTP: <code class="code">sig</code> <a href="OcamlSTP.html">..</a> <code class="code">end</code></pre>Ocaml bindings to STP.<br>
+<hr width="100%">
+<br>
+<span id="2_Types"><h2>Types</h2></span><br>
+<pre><span id="TYPEcontext"><span class="keyword">type</span> <code class="type"></code>context</span> </pre>
+<div class="info">
+An STP context.<br>
+</div>
+
+<pre><span id="TYPEexpr"><span class="keyword">type</span> <code class="type">('a, 'b)</code> expr</span> </pre>
+<div class="info">
+A typed STP expression: the parameters of <code class="code">('type, 'kind) expr</code> are phantom types to enforces correct API usage:<ul>
+<li><code class="code">'type</code> is the type of the STP expression which may be a boolean <code class="code">[`bool]</code>, a bitvector <code class="code">[`bv]</code>, or an array <code class="code">[`array]</code>;</li>
+<li><code class="code">'kind</code> indicates whether the STP expression is an expression <code class="code">[`expr]</code>, a variable <code class="code">[`var]</code>, or a constant <code class="code">[`const]</code>.</li>
+</ul>
+<br>
+</div>
+
+<br><code><span id="TYPEvalidity"><span class="keyword">type</span> <code class="type"></code>validity</span> = </code><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span class="constructor">Invalid</span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span class="constructor">Valid</span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span class="constructor">Undecided</span></code></td>
+
+</tr></table>
+
+<div class="info">
+The result of an STP query.<br>
+</div>
+
+<br>
+<span id="2_STPcontext"><h2>STP context</h2></span><br>
+<pre><span id="VALmake_context"><span class="keyword">val</span> make_context</span> : <code class="type">unit -> <a href="OcamlSTP.html#TYPEcontext">context</a></code></pre><div class="info">
+<code class="code">make_context ()</code> creates a new STP context.<br>
+</div>
+<pre><span id="VALset_seed"><span class="keyword">val</span> set_seed</span> : <code class="type"><a href="OcamlSTP.html#TYPEcontext">context</a> -> int option -> unit</code></pre><div class="info">
+<code class="code">set_seed stp seed</code> sets an optional seed for the internal random number generator used in the STP context <code class="code">stp</code>.<br>
+</div>
+<br>
+<span id="2_Variables"><h2>Variables</h2></span><br>
+<pre><span id="VALbool_var"><span class="keyword">val</span> bool_var</span> : <code class="type"><a href="OcamlSTP.html#TYPEcontext">context</a> -> string -> ([ `bool ], [> `var ]) <a href="OcamlSTP.html#TYPEexpr">expr</a></code></pre><div class="info">
+<code class="code">bool_var stp name</code> looks up or creates a boolean variable named <code class="code">name</code> in the STP context <code class="code">stp</code>.<br>
+<b>Raises</b> <code>Invalid_arg</code> if a non-boolean variable with the same name exists.<br>
+</div>
+<pre><span id="VALbv_var"><span class="keyword">val</span> bv_var</span> : <code class="type"><a href="OcamlSTP.html#TYPEcontext">context</a> -> string -> int -> ([ `bv ], [> `var ]) <a href="OcamlSTP.html#TYPEexpr">expr</a></code></pre><div class="info">
+<code class="code">bv_var stp name width</code> looks up or creates a bitvector variable named <code class="code">name</code> of bit-width <code class="code">width</code> in the STP context <code class="code">stp</code>.<br>
+<b>Raises</b> <code>Invalid_arg</code> if a non-bitvector variable or bitvector variable of different width with the same name exists.<br>
+</div>
+<pre><span id="VALarray_var"><span class="keyword">val</span> array_var</span> : <code class="type"><a href="OcamlSTP.html#TYPEcontext">context</a> -><br>       string -> int -> int -> ([ `array ], [> `var ]) <a href="OcamlSTP.html#TYPEexpr">expr</a></code></pre><div class="info">
+<code class="code">array_var stp name index_width val_width</code> looks up or creates an array variable named <code class="code">name</code> with indices of bit-width <code class="code">index_width</code> and values of bit-width <code class="code">val_width</code> in the STP context <code class="code">stp</code>.<br>
+<b>Raises</b> <code>Invalid_arg</code> if a non-array variable or array variable of different widths with the same name exists.<br>
+</div>
+<br>
+<span id="2_Booleanconstants"><h2>Boolean constants</h2></span><br>
+<pre><span id="VALbool_true"><span class="keyword">val</span> bool_true</span> : <code class="type"><a href="OcamlSTP.html#TYPEcontext">context</a> -> ([ `bool ], [> `const ]) <a href="OcamlSTP.html#TYPEexpr">expr</a></code></pre><div class="info">
+<code class="code">bool_true stp</code> returns a true boolean constant in the STP context <code class="code">stp</code>.<br>
+</div>
+<pre><span id="VALbool_false"><span class="keyword">val</span> bool_false</span> : <code class="type"><a href="OcamlSTP.html#TYPEcontext">context</a> -> ([ `bool ], [> `const ]) <a href="OcamlSTP.html#TYPEexpr">expr</a></code></pre><div class="info">
+<code class="code">bool_false stp</code> returns a false boolean constant in the STP context <code class="code">stp</code>.<br>
+</div>
+<br>
+<span id="2_Bitvectorconstants"><h2>Bitvector constants</h2></span><br>
+<pre><span id="VALbv_of_int"><span class="keyword">val</span> bv_of_int</span> : <code class="type"><a href="OcamlSTP.html#TYPEcontext">context</a> -> int -> int -> ([ `bv ], [> `const ]) <a href="OcamlSTP.html#TYPEexpr">expr</a></code></pre><div class="info">
+<code class="code">bv_of_int stp width val</code> returns a constant bitvector of bit-width <code class="code">width</code> and value <code class="code">val</code> of type <code class="code">int</code> in the STP context <code class="code">stp</code>.<br>
+</div>
+<pre><span id="VALbv_of_int32"><span class="keyword">val</span> bv_of_int32</span> : <code class="type"><a href="OcamlSTP.html#TYPEcontext">context</a> -> int -> int32 -> ([ `bv ], [> `const ]) <a href="OcamlSTP.html#TYPEexpr">expr</a></code></pre><div class="info">
+<code class="code">bv_of_int32 stp width val</code> returns a constant bitvector of bit-width <code class="code">width</code> and value <code class="code">val</code> of type <code class="code">int32</code> in the STP context <code class="code">stp</code>.<br>
+</div>
+<pre><span id="VALbv_of_int64"><span class="keyword">val</span> bv_of_int64</span> : <code class="type"><a href="OcamlSTP.html#TYPEcontext">context</a> -> int -> int64 -> ([ `bv ], [> `const ]) <a href="OcamlSTP.html#TYPEexpr">expr</a></code></pre><div class="info">
+<code class="code">bv_of_int64 stp width val</code> returns a constant bitvector of bit-width <code class="code">width</code> and value <code class="code">val</code> of type <code class="code">int64</code> in the STP context <code class="code">stp</code>.<br>
+</div>
+<pre><span id="VALbv_of_string"><span class="keyword">val</span> bv_of_string</span> : <code class="type"><a href="OcamlSTP.html#TYPEcontext">context</a> -><br>       int -> string -> int -> ([ `bv ], [> `const ]) <a href="OcamlSTP.html#TYPEexpr">expr</a></code></pre><div class="info">
+<code class="code">bv_of_string stp width val_string base</code> returns a constant bitvector of bit-width <code class="code">width</code> and value <code class="code">val_string</code> represented as a string of base <code class="code">base</code> in the STP context <code class="code">stp</code>.<br>
+</div>
+<br>
+<span id="2_Booleanexpressions"><h2>Boolean expressions</h2></span><br>
+<pre><span id="VALbool_not"><span class="keyword">val</span> bool_not</span> : <code class="type"><a href="OcamlSTP.html#TYPEcontext">context</a> -><br>       ([ `bool ], [< `const | `expr | `var ]) <a href="OcamlSTP.html#TYPEexpr">expr</a> -><br>       ([ `bool ], [> `expr ]) <a href="OcamlSTP.html#TYPEexpr">expr</a></code></pre><div class="info">
+<code class="code">bool_not stp expr</code> returns the boolean <code class="code">not expr</code> in the STP context <code class="code">stp</code>.<br>
+</div>
+<pre><span id="VALbool_and"><span class="keyword">val</span> bool_and</span> : <code class="type"><a href="OcamlSTP.html#TYPEcontext">context</a> -><br>       ([ `bool ], [< `const | `expr | `var ]) <a href="OcamlSTP.html#TYPEexpr">expr</a> -><br>       ([ `bool ], [< `const | `expr | `var ]) <a href="OcamlSTP.html#TYPEexpr">expr</a> -><br>       ([ `bool ], [> `expr ]) <a href="OcamlSTP.html#TYPEexpr">expr</a></code></pre><div class="info">
+<code class="code">bool_and stp left right</code> returns the boolean <code class="code">left &amp;&amp; right</code> in the STP context <code class="code">stp</code>.<br>
+</div>
+<pre><span id="VALbool_or"><span class="keyword">val</span> bool_or</span> : <code class="type"><a href="OcamlSTP.html#TYPEcontext">context</a> -><br>       ([ `bool ], [< `const | `expr | `var ]) <a href="OcamlSTP.html#TYPEexpr">expr</a> -><br>       ([ `bool ], [< `const | `expr | `var ]) <a href="OcamlSTP.html#TYPEexpr">expr</a> -><br>       ([ `bool ], [> `expr ]) <a href="OcamlSTP.html#TYPEexpr">expr</a></code></pre><div class="info">
+<code class="code">bool_or stp left right</code> returns the boolean <code class="code">left || right</code> in the STP context <code class="code">stp</code>.<br>
+</div>
+<pre><span id="VALbool_nand"><span class="keyword">val</span> bool_nand</span> : <code class="type"><a href="OcamlSTP.html#TYPEcontext">context</a> -><br>       ([ `bool ], [< `const | `expr | `var ]) <a href="OcamlSTP.html#TYPEexpr">expr</a> -><br>       ([ `bool ], [< `const | `expr | `var ]) <a href="OcamlSTP.html#TYPEexpr">expr</a> -><br>       ([ `bool ], [> `expr ]) <a href="OcamlSTP.html#TYPEexpr">expr</a></code></pre><div class="info">
+<code class="code">bool_nand stp left right</code> returns the boolean <code class="code">not (left &amp;&amp; right)</code> in the STP context <code class="code">stp</code>.<br>
+</div>
+<pre><span id="VALbool_nor"><span class="keyword">val</span> bool_nor</span> : <code class="type"><a href="OcamlSTP.html#TYPEcontext">context</a> -><br>       ([ `bool ], [< `const | `expr | `var ]) <a href="OcamlSTP.html#TYPEexpr">expr</a> -><br>       ([ `bool ], [< `const | `expr | `var ]) <a href="OcamlSTP.html#TYPEexpr">expr</a> -><br>       ([ `bool ], [> `expr ]) <a href="OcamlSTP.html#TYPEexpr">expr</a></code></pre><div class="info">
+<code class="code">bool_nor stp left right</code> returns the boolean <code class="code">not (left || right)</code> in the STP context <code class="code">stp</code>.<br>
+</div>
+<pre><span id="VALbool_xor"><span class="keyword">val</span> bool_xor</span> : <code class="type"><a href="OcamlSTP.html#TYPEcontext">context</a> -><br>       ([ `bool ], [< `const | `expr | `var ]) <a href="OcamlSTP.html#TYPEexpr">expr</a> -><br>       ([ `bool ], [< `const | `expr | `var ]) <a href="OcamlSTP.html#TYPEexpr">expr</a> -><br>       ([ `bool ], [> `expr ]) <a href="OcamlSTP.html#TYPEexpr">expr</a></code></pre><div class="info">
+<code class="code">bool_xor stp left right</code> returns the boolean <code class="code">left xor right</code> in the STP context <code class="code">stp</code>.<br>
+</div>
+<pre><span id="VALbool_iff"><span class="keyword">val</span> bool_iff</span> : <code class="type"><a href="OcamlSTP.html#TYPEcontext">context</a> -><br>       ([ `bool ], [< `const | `expr | `var ]) <a href="OcamlSTP.html#TYPEexpr">expr</a> -><br>       ([ `bool ], [< `const | `expr | `var ]) <a href="OcamlSTP.html#TYPEexpr">expr</a> -><br>       ([ `bool ], [> `expr ]) <a href="OcamlSTP.html#TYPEexpr">expr</a></code></pre><div class="info">
+<code class="code">bool_iff stp left right</code> returns the boolean <code class="code">left iff right</code> (or equivalently, <code class="code">left xnor right</code>) in the STP context <code class="code">stp</code>.<br>
+</div>
+<pre><span id="VALbool_implies"><span class="keyword">val</span> bool_implies</span> : <code class="type"><a href="OcamlSTP.html#TYPEcontext">context</a> -><br>       ([ `bool ], [< `const | `expr | `var ]) <a href="OcamlSTP.html#TYPEexpr">expr</a> -><br>       ([ `bool ], [< `const | `expr | `var ]) <a href="OcamlSTP.html#TYPEexpr">expr</a> -><br>       ([ `bool ], [> `expr ]) <a href="OcamlSTP.html#TYPEexpr">expr</a></code></pre><div class="info">
+<code class="code">bool_implies stp left right</code> returns the boolean <code class="code">left implies right</code> (or equivalently, <code class="code">not left or right</code>) in the STP context <code class="code">stp</code>.<br>
+</div>
+<br>
+<span id="2_Bitvectorarithmeticexpressions"><h2>Bitvector arithmetic expressions</h2></span><br>
+<pre><span id="VALbv_neg"><span class="keyword">val</span> bv_neg</span> : <code class="type"><a href="OcamlSTP.html#TYPEcontext">context</a> -><br>       ([ `bv ], [< `const | `expr | `var ]) <a href="OcamlSTP.html#TYPEexpr">expr</a> -><br>       ([ `bv ], [> `expr ]) <a href="OcamlSTP.html#TYPEexpr">expr</a></code></pre><div class="info">
+<code class="code">bv_neg stp expr</code> returns the bitvector <code class="code">-expr</code> in the STP context <code class="code">stp</code>.<br>
+</div>
+<pre><span id="VALbv_add"><span class="keyword">val</span> bv_add</span> : <code class="type"><a href="OcamlSTP.html#TYPEcontext">context</a> -><br>       ([ `bv ], [< `const | `expr | `var ]) <a href="OcamlSTP.html#TYPEexpr">expr</a> -><br>       ([ `bv ], [< `const | `expr | `var ]) <a href="OcamlSTP.html#TYPEexpr">expr</a> -><br>       ([ `bv ], [> `expr ]) <a href="OcamlSTP.html#TYPEexpr">expr</a></code></pre><div class="info">
+<code class="code">bv_add stp left right</code> returns the bitvector <code class="code">left + right</code> in the STP context <code class="code">stp</code>.<br>
+<b>Raises</b> <code>Invalid_arg</code> if the widths of <code class="code">left</code> and <code class="code">right</code> differ.<br>
+</div>
+<pre><span id="VALbv_sub"><span class="keyword">val</span> bv_sub</span> : <code class="type"><a href="OcamlSTP.html#TYPEcontext">context</a> -><br>       ([ `bv ], [< `const | `expr | `var ]) <a href="OcamlSTP.html#TYPEexpr">expr</a> -><br>       ([ `bv ], [< `const | `expr | `var ]) <a href="OcamlSTP.html#TYPEexpr">expr</a> -><br>       ([ `bv ], [> `expr ]) <a href="OcamlSTP.html#TYPEexpr">expr</a></code></pre><div class="info">
+<code class="code">bv_sub stp left right</code> returns the bitvector <code class="code">left - right</code> in the STP context <code class="code">stp</code>.<br>
+<b>Raises</b> <code>Invalid_arg</code> if the widths of <code class="code">left</code> and <code class="code">right</code> differ.<br>
+</div>
+<pre><span id="VALbv_mul"><span class="keyword">val</span> bv_mul</span> : <code class="type"><a href="OcamlSTP.html#TYPEcontext">context</a> -><br>       ([ `bv ], [< `const | `expr | `var ]) <a href="OcamlSTP.html#TYPEexpr">expr</a> -><br>       ([ `bv ], [< `const | `expr | `var ]) <a href="OcamlSTP.html#TYPEexpr">expr</a> -><br>       ([ `bv ], [> `expr ]) <a href="OcamlSTP.html#TYPEexpr">expr</a></code></pre><div class="info">
+<code class="code">bv_mul stp left right</code> returns the bitvector <code class="code">left * right</code> in the STP context <code class="code">stp</code>.<br>
+<b>Raises</b> <code>Invalid_arg</code> if the widths of <code class="code">left</code> and <code class="code">right</code> differ.<br>
+</div>
+<pre><span id="VALbv_div"><span class="keyword">val</span> bv_div</span> : <code class="type"><a href="OcamlSTP.html#TYPEcontext">context</a> -><br>       ([ `bv ], [< `const | `expr | `var ]) <a href="OcamlSTP.html#TYPEexpr">expr</a> -><br>       ([ `bv ], [< `const | `expr | `var ]) <a href="OcamlSTP.html#TYPEexpr">expr</a> -><br>       ([ `bv ], [> `expr ]) <a href="OcamlSTP.html#TYPEexpr">expr</a></code></pre><div class="info">
+<code class="code">bv_div stp left right</code> returns the bitvector <code class="code">left / right</code> in the STP context <code class="code">stp</code>. <b>Terminates ungracefully if <code class="code">right</code> is 0.</b><br>
+<b>Raises</b> <code>Invalid_arg</code> if the widths of <code class="code">left</code> and <code class="code">right</code> differ.<br>
+</div>
+<pre><span id="VALbv_rem"><span class="keyword">val</span> bv_rem</span> : <code class="type"><a href="OcamlSTP.html#TYPEcontext">context</a> -><br>       ([ `bv ], [< `const | `expr | `var ]) <a href="OcamlSTP.html#TYPEexpr">expr</a> -><br>       ([ `bv ], [< `const | `expr | `var ]) <a href="OcamlSTP.html#TYPEexpr">expr</a> -><br>       ([ `bv ], [> `expr ]) <a href="OcamlSTP.html#TYPEexpr">expr</a></code></pre><div class="info">
+<code class="code">bv_rem stp left right</code> returns the bitvector of the remainder of <code class="code">left / right</code> (i.e. <code class="code">left mod right</code>) in the STP context <code class="code">stp</code>. <b>Terminates ungracefully if <code class="code">right</code> is 0.</b><br>
+<b>Raises</b> <code>Invalid_arg</code> if the widths of <code class="code">left</code> and <code class="code">right</code> differ.<br>
+</div>
+<pre><span id="VALbv_signed_div"><span class="keyword">val</span> bv_signed_div</span> : <code class="type"><a href="OcamlSTP.html#TYPEcontext">context</a> -><br>       ([ `bv ], [< `const | `expr | `var ]) <a href="OcamlSTP.html#TYPEexpr">expr</a> -><br>       ([ `bv ], [< `const | `expr | `var ]) <a href="OcamlSTP.html#TYPEexpr">expr</a> -><br>       ([ `bv ], [> `expr ]) <a href="OcamlSTP.html#TYPEexpr">expr</a></code></pre><div class="info">
+<code class="code">bv_signed_div stp left right</code> returns the bitvector of the signed division <code class="code">left / right</code> in the STP context <code class="code">stp</code>. <b>Terminates ungracefully if <code class="code">right</code> is 0.</b><br>
+<b>Raises</b> <code>Invalid_arg</code> if the widths of <code class="code">left</code> and <code class="code">right</code> differ.<br>
+</div>
+<pre><span id="VALbv_signed_rem"><span class="keyword">val</span> bv_signed_rem</span> : <code class="type"><a href="OcamlSTP.html#TYPEcontext">context</a> -><br>       ([ `bv ], [< `const | `expr | `var ]) <a href="OcamlSTP.html#TYPEexpr">expr</a> -><br>       ([ `bv ], [< `const | `expr | `var ]) <a href="OcamlSTP.html#TYPEexpr">expr</a> -><br>       ([ `bv ], [> `expr ]) <a href="OcamlSTP.html#TYPEexpr">expr</a></code></pre><div class="info">
+<code class="code">bv_signed_rem stp left right</code> returns the bitvector of the signed remainder of <code class="code">left / right</code> rounded towards zero (e.g., -10 rem 3 = -1; i.e. <code class="code">left mod right</code>) in the STP context <code class="code">stp</code>. <b>Terminates ungracefully if <code class="code">right</code> is 0.</b><br>
+<b>Raises</b> <code>Invalid_arg</code> if the widths of <code class="code">left</code> and <code class="code">right</code> differ.<br>
+</div>
+<pre><span id="VALbv_signed_mod"><span class="keyword">val</span> bv_signed_mod</span> : <code class="type"><a href="OcamlSTP.html#TYPEcontext">context</a> -><br>       ([ `bv ], [< `const | `expr | `var ]) <a href="OcamlSTP.html#TYPEexpr">expr</a> -><br>       ([ `bv ], [< `const | `expr | `var ]) <a href="OcamlSTP.html#TYPEexpr">expr</a> -><br>       ([ `bv ], [> `expr ]) <a href="OcamlSTP.html#TYPEexpr">expr</a></code></pre><div class="info">
+<code class="code">bv_signed_mod stp left right</code> returns the bitvector of the signed remainder of <code class="code">left / right</code> rounded towards -infinity (e.g., -10 mod 3 = 2) in the STP context <code class="code">stp</code>. <b>Terminates ungracefully if <code class="code">right</code> is 0.</b><br>
+<b>Raises</b> <code>Invalid_arg</code> if the widths of <code class="code">left</code> and <code class="code">right</code> differ.<br>
+</div>
+<br>
+<span id="2_Bitvectorbitwiseexpressions"><h2>Bitvector bitwise expressions</h2></span><br>
+<pre><span id="VALbv_shift_left"><span class="keyword">val</span> bv_shift_left</span> : <code class="type"><a href="OcamlSTP.html#TYPEcontext">context</a> -><br>       ([ `bv ], [< `const | `expr | `var ]) <a href="OcamlSTP.html#TYPEexpr">expr</a> -><br>       ([ `bv ], [< `const | `expr | `var ]) <a href="OcamlSTP.html#TYPEexpr">expr</a> -><br>       ([ `bv ], [> `expr ]) <a href="OcamlSTP.html#TYPEexpr">expr</a></code></pre><div class="info">
+<code class="code">bv_shift_left stp expr shift</code> returns the bitvector <code class="code">expr</code> shifted left by <code class="code">shift</code> (i.e. <code class="code">expr lsl shift</code>) in the STP context <code class="code">stp</code>.<br>
+<b>Raises</b> <code>Invalid_arg</code> if the widths of <code class="code">left</code> and <code class="code">right</code> differ.<br>
+</div>
+<pre><span id="VALbv_shift_right"><span class="keyword">val</span> bv_shift_right</span> : <code class="type"><a href="OcamlSTP.html#TYPEcontext">context</a> -><br>       ([ `bv ], [< `const | `expr | `var ]) <a href="OcamlSTP.html#TYPEexpr">expr</a> -><br>       ([ `bv ], [< `const | `expr | `var ]) <a href="OcamlSTP.html#TYPEexpr">expr</a> -><br>       ([ `bv ], [> `expr ]) <a href="OcamlSTP.html#TYPEexpr">expr</a></code></pre><div class="info">
+<code class="code">bv_shift_right stp expr shift</code> returns the bitvector <code class="code">expr</code> shifted right by <code class="code">shift</code> (i.e. <code class="code">expr lsr shift</code>) in the STP context <code class="code">stp</code>.<br>
+<b>Raises</b> <code>Invalid_arg</code> if the widths of <code class="code">left</code> and <code class="code">right</code> differ.<br>
+</div>
+<pre><span id="VALbv_signed_shift_right"><span class="keyword">val</span> bv_signed_shift_right</span> : <code class="type"><a href="OcamlSTP.html#TYPEcontext">context</a> -><br>       ([ `bv ], [< `const | `expr | `var ]) <a href="OcamlSTP.html#TYPEexpr">expr</a> -><br>       ([ `bv ], [< `const | `expr | `var ]) <a href="OcamlSTP.html#TYPEexpr">expr</a> -><br>       ([ `bv ], [> `expr ]) <a href="OcamlSTP.html#TYPEexpr">expr</a></code></pre><div class="info">
+<code class="code">bv_signed_shift_right stp expr shift</code> returns the bitvector <code class="code">expr</code> shifted right by <code class="code">shift</code> by replicating the sign bit (i.e. <code class="code">expr asr shift</code>) in the STP context <code class="code">stp</code>.<br>
+<b>Raises</b> <code>Invalid_arg</code> if the widths of <code class="code">left</code> and <code class="code">right</code> differ.<br>
+</div>
+<pre><span id="VALbv_not"><span class="keyword">val</span> bv_not</span> : <code class="type"><a href="OcamlSTP.html#TYPEcontext">context</a> -><br>       ([ `bv ], [< `const | `expr | `var ]) <a href="OcamlSTP.html#TYPEexpr">expr</a> -><br>       ([ `bv ], [> `expr ]) <a href="OcamlSTP.html#TYPEexpr">expr</a></code></pre><div class="info">
+<code class="code">bv_not stp expr</code> returns the bitvector of bitwise <code class="code">not expr</code> (i.e., <code class="code">lnot expr</code>) in the STP context <code class="code">stp</code>.<br>
+</div>
+<pre><span id="VALbv_and"><span class="keyword">val</span> bv_and</span> : <code class="type"><a href="OcamlSTP.html#TYPEcontext">context</a> -><br>       ([ `bv ], [< `const | `expr | `var ]) <a href="OcamlSTP.html#TYPEexpr">expr</a> -><br>       ([ `bv ], [< `const | `expr | `var ]) <a href="OcamlSTP.html#TYPEexpr">expr</a> -><br>       ([ `bv ], [> `expr ]) <a href="OcamlSTP.html#TYPEexpr">expr</a></code></pre><div class="info">
+<code class="code">bv_and stp left right</code> returns the bitvector of bitwise <code class="code">left &amp;&amp; right</code> (i.e. <code class="code">left land right</code>) in the STP context <code class="code">stp</code>.<br>
+<b>Raises</b> <code>Invalid_arg</code> if the widths of <code class="code">left</code> and <code class="code">right</code> differ.<br>
+</div>
+<pre><span id="VALbv_or"><span class="keyword">val</span> bv_or</span> : <code class="type"><a href="OcamlSTP.html#TYPEcontext">context</a> -><br>       ([ `bv ], [< `const | `expr | `var ]) <a href="OcamlSTP.html#TYPEexpr">expr</a> -><br>       ([ `bv ], [< `const | `expr | `var ]) <a href="OcamlSTP.html#TYPEexpr">expr</a> -><br>       ([ `bv ], [> `expr ]) <a href="OcamlSTP.html#TYPEexpr">expr</a></code></pre><div class="info">
+<code class="code">bv_or stp left right</code> returns the bitvector of bitwise <code class="code">left || right</code> (i.e. <code class="code">left lor right</code>) in the STP context <code class="code">stp</code>.<br>
+<b>Raises</b> <code>Invalid_arg</code> if the widths of <code class="code">left</code> and <code class="code">right</code> differ.<br>
+</div>
+<pre><span id="VALbv_xor"><span class="keyword">val</span> bv_xor</span> : <code class="type"><a href="OcamlSTP.html#TYPEcontext">context</a> -><br>       ([ `bv ], [< `const | `expr | `var ]) <a href="OcamlSTP.html#TYPEexpr">expr</a> -><br>       ([ `bv ], [< `const | `expr | `var ]) <a href="OcamlSTP.html#TYPEexpr">expr</a> -><br>       ([ `bv ], [> `expr ]) <a href="OcamlSTP.html#TYPEexpr">expr</a></code></pre><div class="info">
+<code class="code">bv_xor stp left right</code> returns the bitvector of bitwise <code class="code">left xor right</code> (i.e., <code class="code">left lxor right</code>) in the STP context <code class="code">stp</code>.<br>
+<b>Raises</b> <code>Invalid_arg</code> if the widths of <code class="code">left</code> and <code class="code">right</code> differ.<br>
+</div>
+<br>
+<span id="2_Bitvectorslicingextension"><h2>Bitvector slicing/extension</h2></span><br>
+<pre><span id="VALbv_get_bit"><span class="keyword">val</span> bv_get_bit</span> : <code class="type"><a href="OcamlSTP.html#TYPEcontext">context</a> -><br>       ([ `bv ], [< `const | `expr | `var ]) <a href="OcamlSTP.html#TYPEexpr">expr</a> -><br>       int -> ([ `bool ], [> `expr ]) <a href="OcamlSTP.html#TYPEexpr">expr</a></code></pre><div class="info">
+<code class="code">bv_get_bit stp expr index</code> returns the boolean of the <code class="code">index</code>th bit of <code class="code">expr</code> in the STP context <code class="code">stp</code>.<br>
+</div>
+<pre><span id="VALbv_concat"><span class="keyword">val</span> bv_concat</span> : <code class="type"><a href="OcamlSTP.html#TYPEcontext">context</a> -><br>       ([ `bv ], [< `const | `expr | `var ]) <a href="OcamlSTP.html#TYPEexpr">expr</a> -><br>       ([ `bv ], [< `const | `expr | `var ]) <a href="OcamlSTP.html#TYPEexpr">expr</a> -><br>       ([ `bv ], [> `expr ]) <a href="OcamlSTP.html#TYPEexpr">expr</a></code></pre><div class="info">
+<code class="code">bv_concat stp left right</code> returns the bitvector concatenation of <code class="code">left</code> and <code class="code">right</code> in the STP context <code class="code">stp</code>.<br>
+</div>
+<pre><span id="VALbv_extract"><span class="keyword">val</span> bv_extract</span> : <code class="type"><a href="OcamlSTP.html#TYPEcontext">context</a> -><br>       ([ `bv ], [< `const | `expr | `var ]) <a href="OcamlSTP.html#TYPEexpr">expr</a> -><br>       int -> int -> ([ `bv ], [> `expr ]) <a href="OcamlSTP.html#TYPEexpr">expr</a></code></pre><div class="info">
+<code class="code">bv_extract stp expr high_bit low_bit</code> returns the bitvector slice from <code class="code">high_bit</code> to <code class="code">low_bit</code> inclusive in the STP context <code class="code">stp</code>.<br>
+</div>
+<pre><span id="VALbv_zero_extend"><span class="keyword">val</span> bv_zero_extend</span> : <code class="type"><a href="OcamlSTP.html#TYPEcontext">context</a> -><br>       ([ `bv ], [< `const | `expr | `var ]) <a href="OcamlSTP.html#TYPEexpr">expr</a> -><br>       int -> ([ `bv ], [> `expr ]) <a href="OcamlSTP.html#TYPEexpr">expr</a></code></pre><div class="info">
+<code class="code">bv_zero_extend stp expr width</code> returns the bitvector <code class="code">expr</code> extended to <code class="code">width</code> bits in the STP context <code class="code">stp</code>.<br>
+</div>
+<pre><span id="VALbv_sign_extend"><span class="keyword">val</span> bv_sign_extend</span> : <code class="type"><a href="OcamlSTP.html#TYPEcontext">context</a> -><br>       ([ `bv ], [< `const | `expr | `var ]) <a href="OcamlSTP.html#TYPEexpr">expr</a> -><br>       int -> ([ `bv ], [> `expr ]) <a href="OcamlSTP.html#TYPEexpr">expr</a></code></pre><div class="info">
+<code class="code">bv_sign_extend stp expr width</code> returns the bitvector <code class="code">expr</code> extended to <code class="code">width</code> bits by replicating the sign bit in the STP context <code class="code">stp</code>.<br>
+</div>
+<br>
+<span id="2_Bitvectorcomparison"><h2>Bitvector comparison</h2></span><br>
+<pre><span id="VALbv_eq"><span class="keyword">val</span> bv_eq</span> : <code class="type"><a href="OcamlSTP.html#TYPEcontext">context</a> -><br>       ([ `bv ], [< `const | `expr | `var ]) <a href="OcamlSTP.html#TYPEexpr">expr</a> -><br>       ([ `bv ], [< `const | `expr | `var ]) <a href="OcamlSTP.html#TYPEexpr">expr</a> -><br>       ([ `bool ], [> `expr ]) <a href="OcamlSTP.html#TYPEexpr">expr</a></code></pre><div class="info">
+<code class="code">bv_eq stp left right</code> returns the boolean of <code class="code">left = right</code> in the STP context <code class="code">stp</code>.<br>
+<b>Raises</b> <code>Invalid_arg</code> if the widths of <code class="code">left</code> and <code class="code">right</code> differ.<br>
+</div>
+<pre><span id="VALbv_lt"><span class="keyword">val</span> bv_lt</span> : <code class="type"><a href="OcamlSTP.html#TYPEcontext">context</a> -><br>       ([ `bv ], [< `const | `expr | `var ]) <a href="OcamlSTP.html#TYPEexpr">expr</a> -><br>       ([ `bv ], [< `const | `expr | `var ]) <a href="OcamlSTP.html#TYPEexpr">expr</a> -><br>       ([ `bool ], [> `expr ]) <a href="OcamlSTP.html#TYPEexpr">expr</a></code></pre><div class="info">
+<code class="code">bv_lt stp left right</code> returns the boolean of <code class="code">left &lt; right</code> in the STP context <code class="code">stp</code>.<br>
+<b>Raises</b> <code>Invalid_arg</code> if the widths of <code class="code">left</code> and <code class="code">right</code> differ.<br>
+</div>
+<pre><span id="VALbv_le"><span class="keyword">val</span> bv_le</span> : <code class="type"><a href="OcamlSTP.html#TYPEcontext">context</a> -><br>       ([ `bv ], [< `const | `expr | `var ]) <a href="OcamlSTP.html#TYPEexpr">expr</a> -><br>       ([ `bv ], [< `const | `expr | `var ]) <a href="OcamlSTP.html#TYPEexpr">expr</a> -><br>       ([ `bool ], [> `expr ]) <a href="OcamlSTP.html#TYPEexpr">expr</a></code></pre><div class="info">
+<code class="code">bv_le stp left right</code> returns the boolean of <code class="code">left &lt;= right</code> in the STP context <code class="code">stp</code>.<br>
+<b>Raises</b> <code>Invalid_arg</code> if the widths of <code class="code">left</code> and <code class="code">right</code> differ.<br>
+</div>
+<pre><span id="VALbv_gt"><span class="keyword">val</span> bv_gt</span> : <code class="type"><a href="OcamlSTP.html#TYPEcontext">context</a> -><br>       ([ `bv ], [< `const | `expr | `var ]) <a href="OcamlSTP.html#TYPEexpr">expr</a> -><br>       ([ `bv ], [< `const | `expr | `var ]) <a href="OcamlSTP.html#TYPEexpr">expr</a> -><br>       ([ `bool ], [> `expr ]) <a href="OcamlSTP.html#TYPEexpr">expr</a></code></pre><div class="info">
+<code class="code">bv_gt stp left right</code> returns the boolean of <code class="code">left &gt; right</code> in the STP context <code class="code">stp</code>.<br>
+<b>Raises</b> <code>Invalid_arg</code> if the widths of <code class="code">left</code> and <code class="code">right</code> differ.<br>
+</div>
+<pre><span id="VALbv_ge"><span class="keyword">val</span> bv_ge</span> : <code class="type"><a href="OcamlSTP.html#TYPEcontext">context</a> -><br>       ([ `bv ], [< `const | `expr | `var ]) <a href="OcamlSTP.html#TYPEexpr">expr</a> -><br>       ([ `bv ], [< `const | `expr | `var ]) <a href="OcamlSTP.html#TYPEexpr">expr</a> -><br>       ([ `bool ], [> `expr ]) <a href="OcamlSTP.html#TYPEexpr">expr</a></code></pre><div class="info">
+<code class="code">bv_ge stp left right</code> returns the boolean of <code class="code">left &gt;= right</code> in the STP context <code class="code">stp</code>.<br>
+<b>Raises</b> <code>Invalid_arg</code> if the widths of <code class="code">left</code> and <code class="code">right</code> differ.<br>
+</div>
+<pre><span id="VALbv_signed_lt"><span class="keyword">val</span> bv_signed_lt</span> : <code class="type"><a href="OcamlSTP.html#TYPEcontext">context</a> -><br>       ([ `bv ], [< `const | `expr | `var ]) <a href="OcamlSTP.html#TYPEexpr">expr</a> -><br>       ([ `bv ], [< `const | `expr | `var ]) <a href="OcamlSTP.html#TYPEexpr">expr</a> -><br>       ([ `bool ], [> `expr ]) <a href="OcamlSTP.html#TYPEexpr">expr</a></code></pre><div class="info">
+<code class="code">bv_signed_lt stp left right</code> returns the boolean of signed <code class="code">left &lt; right</code> in the STP context <code class="code">stp</code>.<br>
+<b>Raises</b> <code>Invalid_arg</code> if the widths of <code class="code">left</code> and <code class="code">right</code> differ.<br>
+</div>
+<pre><span id="VALbv_signed_le"><span class="keyword">val</span> bv_signed_le</span> : <code class="type"><a href="OcamlSTP.html#TYPEcontext">context</a> -><br>       ([ `bv ], [< `const | `expr | `var ]) <a href="OcamlSTP.html#TYPEexpr">expr</a> -><br>       ([ `bv ], [< `const | `expr | `var ]) <a href="OcamlSTP.html#TYPEexpr">expr</a> -><br>       ([ `bool ], [> `expr ]) <a href="OcamlSTP.html#TYPEexpr">expr</a></code></pre><div class="info">
+<code class="code">bv_signed_le stp left right</code> returns the boolean of signed <code class="code">left &lt;= right</code> in the STP context <code class="code">stp</code>.<br>
+<b>Raises</b> <code>Invalid_arg</code> if the widths of <code class="code">left</code> and <code class="code">right</code> differ.<br>
+</div>
+<pre><span id="VALbv_signed_gt"><span class="keyword">val</span> bv_signed_gt</span> : <code class="type"><a href="OcamlSTP.html#TYPEcontext">context</a> -><br>       ([ `bv ], [< `const | `expr | `var ]) <a href="OcamlSTP.html#TYPEexpr">expr</a> -><br>       ([ `bv ], [< `const | `expr | `var ]) <a href="OcamlSTP.html#TYPEexpr">expr</a> -><br>       ([ `bool ], [> `expr ]) <a href="OcamlSTP.html#TYPEexpr">expr</a></code></pre><div class="info">
+<code class="code">bv_signed_gt stp left right</code> returns the boolean of signed <code class="code">left &gt; right</code> in the STP context <code class="code">stp</code>.<br>
+<b>Raises</b> <code>Invalid_arg</code> if the widths of <code class="code">left</code> and <code class="code">right</code> differ.<br>
+</div>
+<pre><span id="VALbv_signed_ge"><span class="keyword">val</span> bv_signed_ge</span> : <code class="type"><a href="OcamlSTP.html#TYPEcontext">context</a> -><br>       ([ `bv ], [< `const | `expr | `var ]) <a href="OcamlSTP.html#TYPEexpr">expr</a> -><br>       ([ `bv ], [< `const | `expr | `var ]) <a href="OcamlSTP.html#TYPEexpr">expr</a> -><br>       ([ `bool ], [> `expr ]) <a href="OcamlSTP.html#TYPEexpr">expr</a></code></pre><div class="info">
+<code class="code">bv_signed_ge stp left right</code> returns the boolean of signed <code class="code">left &gt;= right</code> in the STP context <code class="code">stp</code>.<br>
+<b>Raises</b> <code>Invalid_arg</code> if the widths of <code class="code">left</code> and <code class="code">right</code> differ.<br>
+</div>
+<br>
+<span id="2_Arrayoperations"><h2>Array operations</h2></span><br>
+<pre><span id="VALarray_read"><span class="keyword">val</span> array_read</span> : <code class="type"><a href="OcamlSTP.html#TYPEcontext">context</a> -><br>       ([ `array ], [< `const | `expr | `var ]) <a href="OcamlSTP.html#TYPEexpr">expr</a> -><br>       ([ `bv ], [< `const | `expr | `var ]) <a href="OcamlSTP.html#TYPEexpr">expr</a> -><br>       ([ `bv ], [> `expr ]) <a href="OcamlSTP.html#TYPEexpr">expr</a></code></pre><div class="info">
+<code class="code">array_read stp array index</code> returns the bitvector of the <code class="code">index</code>th element of <code class="code">array</code> in the STP context <code class="code">stp</code>.<br>
+</div>
+<pre><span id="VALarray_write"><span class="keyword">val</span> array_write</span> : <code class="type"><a href="OcamlSTP.html#TYPEcontext">context</a> -><br>       ([ `array ], [< `const | `expr | `var ]) <a href="OcamlSTP.html#TYPEexpr">expr</a> -><br>       ([ `bv ], [< `const | `expr | `var ]) <a href="OcamlSTP.html#TYPEexpr">expr</a> -><br>       ([ `bv ], [< `const | `expr | `var ]) <a href="OcamlSTP.html#TYPEexpr">expr</a> -><br>       ([ `array ], [> `expr ]) <a href="OcamlSTP.html#TYPEexpr">expr</a></code></pre><div class="info">
+<code class="code">array_write stp array index value</code> returns the array of <code class="code">array</code> with the <code class="code">index</code>th element replaced with the bitvector <code class="code">value</code> in the STP context <code class="code">stp</code>.<br>
+</div>
+<br>
+<span id="2_Conditionalexpressions"><h2>Conditional expressions</h2></span><br>
+<pre><span id="VALite"><span class="keyword">val</span> ite</span> : <code class="type"><a href="OcamlSTP.html#TYPEcontext">context</a> -><br>       ([ `bool ], [< `const | `expr | `var ]) <a href="OcamlSTP.html#TYPEexpr">expr</a> -><br>       ('a, [< `const | `expr | `var ]) <a href="OcamlSTP.html#TYPEexpr">expr</a> -><br>       ('a, [< `const | `expr | `var ]) <a href="OcamlSTP.html#TYPEexpr">expr</a> -><br>       ('a, [> `expr ]) <a href="OcamlSTP.html#TYPEexpr">expr</a></code></pre><div class="info">
+<code class="code">ite stp guard then else</code> returns a conditional expression that has the value <code class="code">then</code> if <code class="code">guard</code> is true, or <code class="code">else</code> otherwise, in the STP context <code class="code">stp</code>.<br>
+</div>
+<br>
+<span id="2_Validitychecking"><h2>Validity checking</h2></span><br>
+<pre><span id="VALvc_assert"><span class="keyword">val</span> vc_assert</span> : <code class="type"><a href="OcamlSTP.html#TYPEcontext">context</a> -><br>       ([ `bool ], [< `const | `expr | `var ]) <a href="OcamlSTP.html#TYPEexpr">expr</a> -> unit</code></pre><div class="info">
+<code class="code">vc_assert stp expr</code> asserts the boolean <code class="code">expr</code> in the STP context <code class="code">stp</code>.<br>
+</div>
+<pre><span id="VALvc_push"><span class="keyword">val</span> vc_push</span> : <code class="type"><a href="OcamlSTP.html#TYPEcontext">context</a> -> unit</code></pre><div class="info">
+<code class="code">vc_push stp</code> saves the current state of the STP context <code class="code">stp</code> (i.e., the list of assertions).<br>
+</div>
+<pre><span id="VALvc_pop"><span class="keyword">val</span> vc_pop</span> : <code class="type"><a href="OcamlSTP.html#TYPEcontext">context</a> -> unit</code></pre><div class="info">
+<code class="code">vc_pop stp</code> restores the most recently saved state of the STP context <code class="code">stp</code> (i.e., the list of assertions).<br>
+</div>
+<pre><span id="VALvc_query"><span class="keyword">val</span> vc_query</span> : <code class="type"><a href="OcamlSTP.html#TYPEcontext">context</a> -><br>       ([ `bool ], [< `const | `expr | `var ]) <a href="OcamlSTP.html#TYPEexpr">expr</a> -> <a href="OcamlSTP.html#TYPEvalidity">validity</a></code></pre><div class="info">
+<code class="code">vc_query stp expr</code> returns <code class="code">Valid</code> if the boolean <code class="code">expr</code> is true in the STP context <code class="code">stp</code> (i.e., <code class="code">assertions implies expr</code> is true), or <code class="code">Invalid</code> if it cannot be determined (i.e., <code class="code">assertions implies expr</code> may be true or false).<br>
+</div>
+<pre><span id="VALvc_get_asserts"><span class="keyword">val</span> vc_get_asserts</span> : <code class="type"><a href="OcamlSTP.html#TYPEcontext">context</a> -> ([ `bool ], [> `expr ]) <a href="OcamlSTP.html#TYPEexpr">expr</a> list</code></pre><div class="info">
+<code class="code">vc_get_asserts stp</code> get the current list of assertions in the STP context <code class="code">stp</code>.<br>
+</div>
+<pre><span id="VALvc_get_counterexample"><span class="keyword">val</span> vc_get_counterexample</span> : <code class="type"><a href="OcamlSTP.html#TYPEcontext">context</a> -><br>       ([< `bool | `bv ] as 'a, [< `const | `expr | `var ]) <a href="OcamlSTP.html#TYPEexpr">expr</a> -><br>       ('a, [> `const ]) <a href="OcamlSTP.html#TYPEexpr">expr</a> option</code></pre><div class="info">
+<code class="code">vc_get_counterexample stp expr</code> returns <code class="code">Some x</code> where <code class="code">x</code> is the counterexample value for the boolean or bitvector expression <code class="code">expr</code> if the previous query is <code class="code">Invalid</code>, or <code class="code">None</code> if the previous query is <code class="code">Valid</code>.<br>
+</div>
+<br>
+<span id="2_Metadataquery"><h2>Metadata query</h2></span><br>
+<pre><span id="VALbv_width"><span class="keyword">val</span> bv_width</span> : <code class="type"><a href="OcamlSTP.html#TYPEcontext">context</a> -><br>       ([ `bv ], [< `const | `expr | `var ]) <a href="OcamlSTP.html#TYPEexpr">expr</a> -> int</code></pre><div class="info">
+<code class="code">bv_width stp expr</code> returns the bit-width of the bitvector <code class="code">expr</code> in the STP context <code class="code">stp</code>.<br>
+</div>
+<pre><span id="VALarray_value_width"><span class="keyword">val</span> array_value_width</span> : <code class="type"><a href="OcamlSTP.html#TYPEcontext">context</a> -><br>       ([ `array ], [< `const | `expr | `var ]) <a href="OcamlSTP.html#TYPEexpr">expr</a> -> int</code></pre><div class="info">
+<code class="code">array_value_width stp array</code> returns the bit-width of the values of <code class="code">array</code> in the STP context <code class="code">stp</code>.<br>
+</div>
+<pre><span id="VALarray_index_width"><span class="keyword">val</span> array_index_width</span> : <code class="type"><a href="OcamlSTP.html#TYPEcontext">context</a> -><br>       ([ `array ], [< `const | `expr | `var ]) <a href="OcamlSTP.html#TYPEexpr">expr</a> -> int</code></pre><div class="info">
+<code class="code">array_index_width stp array</code> returns the bit-width of the index of <code class="code">array</code> in the STP context <code class="code">stp</code>.<br>
+</div>
+<br>
+<span id="2_Valueconversion"><h2>Value conversion</h2></span><br>
+<pre><span id="VALto_bool"><span class="keyword">val</span> to_bool</span> : <code class="type"><a href="OcamlSTP.html#TYPEcontext">context</a> -> ([ `bool ], [< `const ]) <a href="OcamlSTP.html#TYPEexpr">expr</a> -> bool</code></pre><div class="info">
+<code class="code">to_bool expr</code> returns the <code class="code">bool</code> value of the constant <code class="code">expr</code>.<br>
+</div>
+<pre><span id="VALto_int"><span class="keyword">val</span> to_int</span> : <code class="type"><a href="OcamlSTP.html#TYPEcontext">context</a> -> ([ `bv ], [< `const ]) <a href="OcamlSTP.html#TYPEexpr">expr</a> -> int</code></pre><div class="info">
+<code class="code">to_int expr</code> returns the <code class="code">int</code> value of the constant <code class="code">expr</code>.<br>
+</div>
+<pre><span id="VALto_int32"><span class="keyword">val</span> to_int32</span> : <code class="type"><a href="OcamlSTP.html#TYPEcontext">context</a> -> ([ `bv ], [< `const ]) <a href="OcamlSTP.html#TYPEexpr">expr</a> -> int32</code></pre><div class="info">
+<code class="code">to_int32 expr</code> returns the <code class="code">int32</code> value of the constant <code class="code">expr</code>.<br>
+</div>
+<pre><span id="VALto_int64"><span class="keyword">val</span> to_int64</span> : <code class="type"><a href="OcamlSTP.html#TYPEcontext">context</a> -> ([ `bv ], [< `const ]) <a href="OcamlSTP.html#TYPEexpr">expr</a> -> int64</code></pre><div class="info">
+<code class="code">to_int64 expr</code> returns the <code class="code">int64</code> value of the constant <code class="code">expr</code>.<br>
+</div>
+<pre><span id="VALto_string"><span class="keyword">val</span> to_string</span> : <code class="type"><a href="OcamlSTP.html#TYPEcontext">context</a> -> ('a, 'b) <a href="OcamlSTP.html#TYPEexpr">expr</a> -> string</code></pre><div class="info">
+<code class="code">to_string expr</code> returns the string representation of <code class="code">expr</code>.<br>
+</div>
+</body></html>

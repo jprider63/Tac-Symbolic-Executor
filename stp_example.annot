@@ -1,0 +1,589 @@
+"stp_example.ml" 2 1 5 "stp_example.ml" 2 1 8
+type(
+  unit -> unit
+)
+ident(
+  def run "stp_example.ml" 25 865 902 --
+)
+"stp_example.ml" 2 1 9 "stp_example.ml" 2 1 11
+type(
+  unit
+)
+"stp_example.ml" 3 14 19 "stp_example.ml" 3 14 22
+type(
+  OcamlSTP.context
+)
+"stp_example.ml" 3 14 25 "stp_example.ml" 3 14 46
+type(
+  unit -> OcamlSTP.context
+)
+ident(
+  ext_ref OcamlSTP.make_context
+)
+"stp_example.ml" 3 14 47 "stp_example.ml" 3 14 49
+type(
+  unit
+)
+"stp_example.ml" 3 14 25 "stp_example.ml" 3 14 49
+type(
+  OcamlSTP.context
+)
+"stp_example.ml" 4 53 58 "stp_example.ml" 4 53 59
+type(
+  ([ `bv ], _[< `const | `expr | `var > `var ]) OcamlSTP.expr
+)
+"stp_example.ml" 4 53 62 "stp_example.ml" 4 53 77
+type(
+  OcamlSTP.context ->
+  string ->
+  int -> ([ `bv ], _[< `const | `expr | `var > `var ] as 'a) OcamlSTP.expr
+)
+ident(
+  ext_ref OcamlSTP.bv_var
+)
+"stp_example.ml" 4 53 78 "stp_example.ml" 4 53 81
+type(
+  OcamlSTP.context
+)
+ident(
+  int_ref stp "stp_example.ml" 3 14 19 "stp_example.ml" 3 14 22
+)
+"stp_example.ml" 4 53 82 "stp_example.ml" 4 53 85
+type(
+  string
+)
+"stp_example.ml" 4 53 86 "stp_example.ml" 4 53 87
+type(
+  int
+)
+"stp_example.ml" 4 53 62 "stp_example.ml" 4 53 87
+type(
+  ([ `bv ], 'a) OcamlSTP.expr
+)
+"stp_example.ml" 5 114 119 "stp_example.ml" 5 114 120
+type(
+  ([ `bv ], _[< `const | `expr | `var > `var ]) OcamlSTP.expr
+)
+"stp_example.ml" 5 114 123 "stp_example.ml" 5 114 138
+type(
+  OcamlSTP.context ->
+  string ->
+  int -> ([ `bv ], _[< `const | `expr | `var > `var ] as 'b) OcamlSTP.expr
+)
+ident(
+  ext_ref OcamlSTP.bv_var
+)
+"stp_example.ml" 5 114 139 "stp_example.ml" 5 114 142
+type(
+  OcamlSTP.context
+)
+ident(
+  int_ref stp "stp_example.ml" 3 14 19 "stp_example.ml" 3 14 22
+)
+"stp_example.ml" 5 114 143 "stp_example.ml" 5 114 146
+type(
+  string
+)
+"stp_example.ml" 5 114 147 "stp_example.ml" 5 114 148
+type(
+  int
+)
+"stp_example.ml" 5 114 123 "stp_example.ml" 5 114 148
+type(
+  ([ `bv ], 'b) OcamlSTP.expr
+)
+"stp_example.ml" 6 175 176 "stp_example.ml" 6 175 194
+type(
+  OcamlSTP.context ->
+  ([ `bool ], _[< `const | `expr | `var > `expr ]) OcamlSTP.expr -> unit
+)
+ident(
+  ext_ref OcamlSTP.vc_assert
+)
+"stp_example.ml" 6 175 195 "stp_example.ml" 6 175 198
+type(
+  OcamlSTP.context
+)
+ident(
+  int_ref stp "stp_example.ml" 3 14 19 "stp_example.ml" 3 14 22
+)
+"stp_example.ml" 6 175 200 "stp_example.ml" 6 175 214
+type(
+  OcamlSTP.context ->
+  ([ `bv ], 'a) OcamlSTP.expr ->
+  ([ `bv ], 'b) OcamlSTP.expr ->
+  ([ `bool ], _[< `const | `expr | `var > `expr ] as 'c) OcamlSTP.expr
+)
+ident(
+  ext_ref OcamlSTP.bv_lt
+)
+"stp_example.ml" 6 175 215 "stp_example.ml" 6 175 218
+type(
+  OcamlSTP.context
+)
+ident(
+  int_ref stp "stp_example.ml" 3 14 19 "stp_example.ml" 3 14 22
+)
+"stp_example.ml" 6 175 219 "stp_example.ml" 6 175 220
+type(
+  ([ `bv ], 'a) OcamlSTP.expr
+)
+ident(
+  int_ref x "stp_example.ml" 4 53 58 "stp_example.ml" 4 53 59
+)
+"stp_example.ml" 6 175 221 "stp_example.ml" 6 175 222
+type(
+  ([ `bv ], 'b) OcamlSTP.expr
+)
+ident(
+  int_ref y "stp_example.ml" 5 114 119 "stp_example.ml" 5 114 120
+)
+"stp_example.ml" 6 175 199 "stp_example.ml" 6 175 223
+type(
+  ([ `bool ], 'c) OcamlSTP.expr
+)
+"stp_example.ml" 6 175 176 "stp_example.ml" 6 175 223
+type(
+  unit
+)
+"stp_example.ml" 7 237 242 "stp_example.ml" 7 237 243
+type(
+  ([ `bv ], _[< `const | `expr | `var > `expr ]) OcamlSTP.expr
+)
+"stp_example.ml" 7 237 246 "stp_example.ml" 7 237 261
+type(
+  OcamlSTP.context ->
+  ([ `bv ], 'b) OcamlSTP.expr ->
+  ([ `bv ], 'a) OcamlSTP.expr ->
+  ([ `bv ], _[< `const | `expr | `var > `expr ] as 'd) OcamlSTP.expr
+)
+ident(
+  ext_ref OcamlSTP.bv_sub
+)
+"stp_example.ml" 7 237 262 "stp_example.ml" 7 237 265
+type(
+  OcamlSTP.context
+)
+ident(
+  int_ref stp "stp_example.ml" 3 14 19 "stp_example.ml" 3 14 22
+)
+"stp_example.ml" 7 237 266 "stp_example.ml" 7 237 267
+type(
+  ([ `bv ], 'b) OcamlSTP.expr
+)
+ident(
+  int_ref y "stp_example.ml" 5 114 119 "stp_example.ml" 5 114 120
+)
+"stp_example.ml" 7 237 268 "stp_example.ml" 7 237 269
+type(
+  ([ `bv ], 'a) OcamlSTP.expr
+)
+ident(
+  int_ref x "stp_example.ml" 4 53 58 "stp_example.ml" 4 53 59
+)
+"stp_example.ml" 7 237 246 "stp_example.ml" 7 237 269
+type(
+  ([ `bv ], 'd) OcamlSTP.expr
+)
+"stp_example.ml" 8 289 294 "stp_example.ml" 8 289 295
+type(
+  ([ `bool ], _[< `const | `expr | `var > `expr ]) OcamlSTP.expr
+)
+"stp_example.ml" 8 289 298 "stp_example.ml" 8 289 312
+type(
+  OcamlSTP.context ->
+  ([ `bv ], 'd) OcamlSTP.expr ->
+  ([ `bv ], _[< `const | `expr | `var > `const ]) OcamlSTP.expr ->
+  ([ `bool ], _[< `const | `expr | `var > `expr ] as 'e) OcamlSTP.expr
+)
+ident(
+  ext_ref OcamlSTP.bv_gt
+)
+"stp_example.ml" 8 289 313 "stp_example.ml" 8 289 316
+type(
+  OcamlSTP.context
+)
+ident(
+  int_ref stp "stp_example.ml" 3 14 19 "stp_example.ml" 3 14 22
+)
+"stp_example.ml" 8 289 317 "stp_example.ml" 8 289 318
+type(
+  ([ `bv ], 'd) OcamlSTP.expr
+)
+ident(
+  int_ref d "stp_example.ml" 7 237 242 "stp_example.ml" 7 237 243
+)
+"stp_example.ml" 8 289 320 "stp_example.ml" 8 289 338
+type(
+  OcamlSTP.context ->
+  int ->
+  int -> ([ `bv ], _[< `const | `expr | `var > `const ] as 'f) OcamlSTP.expr
+)
+ident(
+  ext_ref OcamlSTP.bv_of_int
+)
+"stp_example.ml" 8 289 339 "stp_example.ml" 8 289 342
+type(
+  OcamlSTP.context
+)
+ident(
+  int_ref stp "stp_example.ml" 3 14 19 "stp_example.ml" 3 14 22
+)
+"stp_example.ml" 8 289 343 "stp_example.ml" 8 289 344
+type(
+  int
+)
+"stp_example.ml" 8 289 345 "stp_example.ml" 8 289 346
+type(
+  int
+)
+"stp_example.ml" 8 289 319 "stp_example.ml" 8 289 347
+type(
+  ([ `bv ], 'f) OcamlSTP.expr
+)
+"stp_example.ml" 8 289 298 "stp_example.ml" 8 289 347
+type(
+  ([ `bool ], 'e) OcamlSTP.expr
+)
+"stp_example.ml" 10 466 471 "stp_example.ml" 10 466 474
+type(
+  OcamlSTP.validity
+)
+"stp_example.ml" 11 477 479 "stp_example.ml" 11 477 495
+type(
+  OcamlSTP.context -> unit
+)
+ident(
+  ext_ref OcamlSTP.vc_push
+)
+"stp_example.ml" 11 477 496 "stp_example.ml" 11 477 499
+type(
+  OcamlSTP.context
+)
+ident(
+  int_ref stp "stp_example.ml" 3 14 19 "stp_example.ml" 3 14 22
+)
+"stp_example.ml" 11 477 479 "stp_example.ml" 11 477 499
+type(
+  unit
+)
+"stp_example.ml" 12 501 507 "stp_example.ml" 12 501 510
+type(
+  OcamlSTP.validity
+)
+"stp_example.ml" 12 501 513 "stp_example.ml" 12 501 530
+type(
+  OcamlSTP.context -> ([ `bool ], 'e) OcamlSTP.expr -> OcamlSTP.validity
+)
+ident(
+  ext_ref OcamlSTP.vc_query
+)
+"stp_example.ml" 12 501 531 "stp_example.ml" 12 501 534
+type(
+  OcamlSTP.context
+)
+ident(
+  int_ref stp "stp_example.ml" 3 14 19 "stp_example.ml" 3 14 22
+)
+"stp_example.ml" 12 501 535 "stp_example.ml" 12 501 536
+type(
+  ([ `bool ], 'e) OcamlSTP.expr
+)
+ident(
+  int_ref q "stp_example.ml" 8 289 294 "stp_example.ml" 8 289 295
+)
+"stp_example.ml" 12 501 513 "stp_example.ml" 12 501 536
+type(
+  OcamlSTP.validity
+)
+"stp_example.ml" 13 555 557 "stp_example.ml" 13 555 572
+type(
+  OcamlSTP.context -> unit
+)
+ident(
+  ext_ref OcamlSTP.vc_pop
+)
+"stp_example.ml" 13 555 573 "stp_example.ml" 13 555 576
+type(
+  OcamlSTP.context
+)
+ident(
+  int_ref stp "stp_example.ml" 3 14 19 "stp_example.ml" 3 14 22
+)
+"stp_example.ml" 13 555 557 "stp_example.ml" 13 555 576
+type(
+  unit
+)
+"stp_example.ml" 14 578 580 "stp_example.ml" 14 578 583
+type(
+  OcamlSTP.validity
+)
+ident(
+  int_ref ans "stp_example.ml" 12 501 507 "stp_example.ml" 12 501 510
+)
+"stp_example.ml" 13 555 557 "stp_example.ml" 14 578 583
+type(
+  OcamlSTP.validity
+)
+"stp_example.ml" 12 501 503 "stp_example.ml" 14 578 583
+type(
+  OcamlSTP.validity
+)
+"stp_example.ml" 11 477 479 "stp_example.ml" 14 578 583
+type(
+  OcamlSTP.validity
+)
+"stp_example.ml" 16 588 593 "stp_example.ml" 16 588 600
+type(
+  OcamlSTP.validity
+)
+"stp_example.ml" 17 603 605 "stp_example.ml" 17 603 621
+type(
+  OcamlSTP.context -> unit
+)
+ident(
+  ext_ref OcamlSTP.vc_push
+)
+"stp_example.ml" 17 603 622 "stp_example.ml" 17 603 625
+type(
+  OcamlSTP.context
+)
+ident(
+  int_ref stp "stp_example.ml" 3 14 19 "stp_example.ml" 3 14 22
+)
+"stp_example.ml" 17 603 605 "stp_example.ml" 17 603 625
+type(
+  unit
+)
+"stp_example.ml" 18 627 633 "stp_example.ml" 18 627 636
+type(
+  OcamlSTP.validity
+)
+"stp_example.ml" 18 627 639 "stp_example.ml" 18 627 656
+type(
+  OcamlSTP.context ->
+  ([ `bool ], _[< `const | `expr | `var > `expr ]) OcamlSTP.expr ->
+  OcamlSTP.validity
+)
+ident(
+  ext_ref OcamlSTP.vc_query
+)
+"stp_example.ml" 18 627 657 "stp_example.ml" 18 627 660
+type(
+  OcamlSTP.context
+)
+ident(
+  int_ref stp "stp_example.ml" 3 14 19 "stp_example.ml" 3 14 22
+)
+"stp_example.ml" 18 627 662 "stp_example.ml" 18 627 679
+type(
+  OcamlSTP.context ->
+  ([ `bool ], 'e) OcamlSTP.expr ->
+  ([ `bool ], _[< `const | `expr | `var > `expr ] as 'g) OcamlSTP.expr
+)
+ident(
+  ext_ref OcamlSTP.bool_not
+)
+"stp_example.ml" 18 627 680 "stp_example.ml" 18 627 683
+type(
+  OcamlSTP.context
+)
+ident(
+  int_ref stp "stp_example.ml" 3 14 19 "stp_example.ml" 3 14 22
+)
+"stp_example.ml" 18 627 684 "stp_example.ml" 18 627 685
+type(
+  ([ `bool ], 'e) OcamlSTP.expr
+)
+ident(
+  int_ref q "stp_example.ml" 8 289 294 "stp_example.ml" 8 289 295
+)
+"stp_example.ml" 18 627 661 "stp_example.ml" 18 627 686
+type(
+  ([ `bool ], 'g) OcamlSTP.expr
+)
+"stp_example.ml" 18 627 639 "stp_example.ml" 18 627 686
+type(
+  OcamlSTP.validity
+)
+"stp_example.ml" 19 710 712 "stp_example.ml" 19 710 727
+type(
+  OcamlSTP.context -> unit
+)
+ident(
+  ext_ref OcamlSTP.vc_pop
+)
+"stp_example.ml" 19 710 728 "stp_example.ml" 19 710 731
+type(
+  OcamlSTP.context
+)
+ident(
+  int_ref stp "stp_example.ml" 3 14 19 "stp_example.ml" 3 14 22
+)
+"stp_example.ml" 19 710 712 "stp_example.ml" 19 710 731
+type(
+  unit
+)
+"stp_example.ml" 20 733 735 "stp_example.ml" 20 733 738
+type(
+  OcamlSTP.validity
+)
+ident(
+  int_ref ans "stp_example.ml" 18 627 633 "stp_example.ml" 18 627 636
+)
+"stp_example.ml" 19 710 712 "stp_example.ml" 20 733 738
+type(
+  OcamlSTP.validity
+)
+"stp_example.ml" 18 627 629 "stp_example.ml" 20 733 738
+type(
+  OcamlSTP.validity
+)
+"stp_example.ml" 17 603 605 "stp_example.ml" 20 733 738
+type(
+  OcamlSTP.validity
+)
+"stp_example.ml" 22 743 750 "stp_example.ml" 22 743 753
+type(
+  OcamlSTP.validity
+)
+ident(
+  int_ref ans "stp_example.ml" 10 466 471 "stp_example.ml" 10 466 474
+)
+"stp_example.ml" 22 743 755 "stp_example.ml" 22 743 762
+type(
+  OcamlSTP.validity
+)
+ident(
+  int_ref not_ans "stp_example.ml" 16 588 593 "stp_example.ml" 16 588 600
+)
+"stp_example.ml" 22 743 750 "stp_example.ml" 22 743 762
+type(
+  OcamlSTP.validity * OcamlSTP.validity
+)
+"stp_example.ml" 23 768 772 "stp_example.ml" 23 768 786
+type(
+  OcamlSTP.validity
+)
+"stp_example.ml" 23 768 788 "stp_example.ml" 23 768 789
+type(
+  OcamlSTP.validity
+)
+"stp_example.ml" 23 768 772 "stp_example.ml" 23 768 789
+type(
+  OcamlSTP.validity * OcamlSTP.validity
+)
+"stp_example.ml" 23 768 793 "stp_example.ml" 23 768 806
+type(
+  (unit, out_channel, unit) format -> unit
+)
+ident(
+  ext_ref Printf.printf
+)
+"stp_example.ml" 23 768 807 "stp_example.ml" 23 768 815
+type(
+  (unit, out_channel, unit) format
+)
+"stp_example.ml" 23 768 793 "stp_example.ml" 23 768 815
+call(
+  tail
+)
+type(
+  unit
+)
+"stp_example.ml" 24 816 820 "stp_example.ml" 24 816 821
+type(
+  OcamlSTP.validity
+)
+"stp_example.ml" 24 816 823 "stp_example.ml" 24 816 837
+type(
+  OcamlSTP.validity
+)
+"stp_example.ml" 24 816 820 "stp_example.ml" 24 816 837
+type(
+  OcamlSTP.validity * OcamlSTP.validity
+)
+"stp_example.ml" 24 816 841 "stp_example.ml" 24 816 854
+type(
+  (unit, out_channel, unit) format -> unit
+)
+ident(
+  ext_ref Printf.printf
+)
+"stp_example.ml" 24 816 855 "stp_example.ml" 24 816 864
+type(
+  (unit, out_channel, unit) format
+)
+"stp_example.ml" 24 816 841 "stp_example.ml" 24 816 864
+call(
+  tail
+)
+type(
+  unit
+)
+"stp_example.ml" 25 865 869 "stp_example.ml" 25 865 870
+type(
+  OcamlSTP.validity
+)
+"stp_example.ml" 25 865 872 "stp_example.ml" 25 865 873
+type(
+  OcamlSTP.validity
+)
+"stp_example.ml" 25 865 869 "stp_example.ml" 25 865 873
+type(
+  OcamlSTP.validity * OcamlSTP.validity
+)
+"stp_example.ml" 25 865 877 "stp_example.ml" 25 865 890
+type(
+  (unit, out_channel, unit) format -> unit
+)
+ident(
+  ext_ref Printf.printf
+)
+"stp_example.ml" 25 865 891 "stp_example.ml" 25 865 902
+type(
+  (unit, out_channel, unit) format
+)
+"stp_example.ml" 25 865 877 "stp_example.ml" 25 865 902
+call(
+  tail
+)
+type(
+  unit
+)
+"stp_example.ml" 22 743 744 "stp_example.ml" 25 865 902
+type(
+  unit
+)
+"stp_example.ml" 16 588 589 "stp_example.ml" 25 865 902
+type(
+  unit
+)
+"stp_example.ml" 10 466 467 "stp_example.ml" 25 865 902
+type(
+  unit
+)
+"stp_example.ml" 8 289 290 "stp_example.ml" 25 865 902
+type(
+  unit
+)
+"stp_example.ml" 7 237 238 "stp_example.ml" 25 865 902
+type(
+  unit
+)
+"stp_example.ml" 6 175 176 "stp_example.ml" 25 865 902
+type(
+  unit
+)
+"stp_example.ml" 5 114 115 "stp_example.ml" 25 865 902
+type(
+  unit
+)
+"stp_example.ml" 4 53 54 "stp_example.ml" 25 865 902
+type(
+  unit
+)
+"stp_example.ml" 3 14 15 "stp_example.ml" 25 865 902
+type(
+  unit
+)
